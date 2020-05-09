@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ScreamScript : MonoBehaviour
+public class ScreamScriptCylinder : MonoBehaviour
 {
 	[SerializeField]
 	GameObject player;
@@ -14,17 +14,17 @@ public class ScreamScript : MonoBehaviour
 		{
 			if (transform.localScale.x < maxSize)
 			{
-				transform.localScale += new Vector3(growSpeed, growSpeed, growSpeed);
+				transform.localScale += new Vector3(growSpeed, growSpeed*.75f, growSpeed);
 			}
 			else if (transform.localScale.x >= maxSize)
 			{
-				transform.localScale = new Vector3(maxSize, maxSize, maxSize);
+				transform.localScale = new Vector3(maxSize, maxSize*.75f, maxSize);
 			}
 		}
 		else if (transform.localScale.x >= 3.6)
 		{
 			float decreaseShrink = transform.localScale.x/4;
-			transform.localScale -= new Vector3(shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink);
+			transform.localScale -= new Vector3(shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink*.75f, shrinkSpeed*decreaseShrink);
 		}
     }
 }
