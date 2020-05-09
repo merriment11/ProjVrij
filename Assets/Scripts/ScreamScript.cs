@@ -8,9 +8,23 @@ public class ScreamScript : MonoBehaviour
 	public float shrinkSpeed = 0.005f;
 	public float maxSize = 18;
 
+	bool canSee;
+
 	void Update()
     {
-		if (Input.GetKey(KeyCode.F) && player.GetComponent<MyCharacterController>().move.x <= .5 && player.GetComponent<MyCharacterController>().move.z <= .5)
+		if (Input.GetKeyDown(KeyCode.F))
+		{
+			canSee = true;
+			Debug.Log(canSee);
+		}
+
+		if (player.GetComponent<MyCharacterController>().move.x >= .5 && player.GetComponent<MyCharacterController>().move.z >= .5)
+		{
+			canSee = false;
+		}
+
+		Debug.Log(canSee);
+		if (Input.GetKey(KeyCode.F) && canSee)
 		{
 			if (transform.localScale.x < maxSize)
 			{
