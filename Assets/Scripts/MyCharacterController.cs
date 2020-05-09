@@ -17,7 +17,7 @@ public class MyCharacterController : MonoBehaviour
     public float jumpHeight = 2.0f;
     
     Vector3 velocity;
-    Vector3 move = Vector3.zero;
+    public Vector3 move = Vector3.zero;
 
     void Start()
     {
