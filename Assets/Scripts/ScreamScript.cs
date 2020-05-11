@@ -11,19 +11,23 @@ public class ScreamScript : MonoBehaviour
 	bool canSee;
 
 	void Update()
-    {
+	{
+		float xSpeed = player.GetComponent<MyCharacterController>().move.x;
+		float zSpeed = player.GetComponent<MyCharacterController>().move.z; //wellicht manager voor maken
+
 		if (Input.GetKeyDown(KeyCode.F))
 		{
-			canSee = true;
-			Debug.Log(canSee);
+			if (xSpeed <= .25f && -.25f <= xSpeed && zSpeed <= .25f && -.25f <= zSpeed)
+			{
+				canSee = true;
+			}
 		}
 
-		if (player.GetComponent<MyCharacterController>().move.x >= .5 && player.GetComponent<MyCharacterController>().move.z >= .5)
+		if (xSpeed >= .25f || -.25f >= xSpeed || zSpeed >= .25f || -.25f >= zSpeed)
 		{
 			canSee = false;
 		}
 
-		Debug.Log(canSee);
 		if (Input.GetKey(KeyCode.F) && canSee)
 		{
 			if (transform.localScale.x < maxSize)
