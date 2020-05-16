@@ -10,7 +10,7 @@ public class ScreamScript : MonoBehaviour
 
 	bool canSee;
 
-	void Update()
+	void FixedUpdate()
 	{
 		float xSpeed = player.GetComponent<MyCharacterController>().move.x;
 		float zSpeed = player.GetComponent<MyCharacterController>().move.z; //wellicht manager voor maken
