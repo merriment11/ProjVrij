@@ -7,7 +7,7 @@ public class SnapScript : MonoBehaviour
 	public float growSpeed = 0.2f;
 	public float shrinkSpeed = 0.04f;
 	public float maxSize = 18;
-	int vision;
+	int vision = 2;
 	public float size;
 
 	bool canSee;
@@ -36,9 +36,7 @@ public class SnapScript : MonoBehaviour
 				maxSize = 22;
 				break;
 		}
-	}
-	void FixedUpdate()
-	{
+
 		float xSpeed = player.GetComponent<MyCharacterController>().move.x;
 		float zSpeed = player.GetComponent<MyCharacterController>().move.z; //wellicht manager voor maken
 
@@ -55,6 +53,11 @@ public class SnapScript : MonoBehaviour
 			canSee = false;
 		}
 
+		size = transform.localScale.x; //so the raycast script can access it
+	}
+
+	void FixedUpdate()
+	{
 		if (Input.GetButton("Snap") && canSee)
 		{
 			if (transform.localScale.x < maxSize)
@@ -71,7 +74,5 @@ public class SnapScript : MonoBehaviour
 			float decreaseShrink = transform.localScale.x/4;
 			transform.localScale -= new Vector3(shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink);
 		}
-
-		size = transform.localScale.x; //so the raycast script can access it
     }
 }
