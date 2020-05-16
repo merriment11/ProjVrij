@@ -4,11 +4,11 @@ using UnityEngine;
 public class DeletThis : MonoBehaviour
 {
 	float timer;
-	float time = 1000;
+	float time = 5;
 
     void Update()
     {
-		timer++;
+		timer+=Time.deltaTime;
 		if (timer == time)
 		{ Destroy(gameObject); }
 	}
