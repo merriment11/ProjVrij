@@ -319,8 +319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1927789173}
-  growSpeed: 0.04
-  shrinkSpeed: 0.01
+  growSpeed: 0.2
+  shrinkSpeed: 0.04
   maxSize: 18
 --- !u!1 &204777677
 GameObject:
@@ -1785,7 +1785,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 392d904df97aaf747b600d86afc26bbb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.818
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1793,8 +1793,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.44
-  MinDistance: 0.54082394
-  MaxDistance: 15.151651
+  MinDistance: 0.5
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -2080,6 +2080,7 @@ GameObject:
   - component: {fileID: 1502869545}
   - component: {fileID: 1502869544}
   - component: {fileID: 1502869543}
+  - component: {fileID: 1502869546}
   m_Layer: 0
   m_Name: TestCube (2)
   m_TagString: Untagged
@@ -2162,6 +2163,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502869541}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1502869546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502869541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bffeef3dd6a5254d962d477932ee5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1571415521
 GameObject:
   m_ObjectHideFlags: 0

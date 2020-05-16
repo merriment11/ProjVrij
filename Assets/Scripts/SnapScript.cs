@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ScreamScript : MonoBehaviour
+public class SnapScript : MonoBehaviour
 {
 	[SerializeField]
 	GameObject player;
