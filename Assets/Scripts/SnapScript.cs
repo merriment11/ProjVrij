@@ -4,12 +4,37 @@ public class SnapScript : MonoBehaviour
 {
 	[SerializeField]
 	GameObject player;
-	public float growSpeed = 0.04f;
-	public float shrinkSpeed = 0.005f;
+	public float growSpeed = 0.2f;
+	public float shrinkSpeed = 0.04f;
 	public float maxSize = 18;
-
+	int vision;
 	bool canSee;
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Alpha1)) vision = 1;
+		if (Input.GetKeyDown(KeyCode.Alpha2)) vision = 2;
+		if (Input.GetKeyDown(KeyCode.Alpha3)) vision = 3;
+
+		switch (vision)
+		{
+			case (1):
+				growSpeed = 0.15f;
+				shrinkSpeed = 0.06f;
+				maxSize = 15;
+				break;
+			case (2):
+				growSpeed = 0.2f;
+				shrinkSpeed = 0.04f;
+				maxSize = 18;
+				break;
+			case (3):
+				growSpeed = 0.30f;
+				shrinkSpeed = 0.02f;
+				maxSize = 22;
+				break;
+		}
+	}
 	void FixedUpdate()
 	{
 		float xSpeed = player.GetComponent<MyCharacterController>().move.x;
