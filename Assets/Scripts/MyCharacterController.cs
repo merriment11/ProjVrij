@@ -41,23 +41,20 @@ public class MyCharacterController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if (Input.GetButton("Fire2") == false)
+        //movement
+        move = transform.right * x + transform.forward * z;
+		
+        player.Move(move * speed * Time.deltaTime);
+
+        //gravity
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            //movement
-            move = transform.right * x + transform.forward * z;
-
-            player.Move(move * speed * Time.deltaTime);
-
-            //gravity
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
-            }
-
-            velocity.y += gravity * Time.deltaTime;
-
-            player.Move(velocity * Time.deltaTime);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
         }
+
+        velocity.y += gravity * Time.deltaTime;
+
+        player.Move(velocity * Time.deltaTime);
 
         //toggle the mouse hide with escape
         if (Input.GetKeyDown("escape"))
