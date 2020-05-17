@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnapScript : MonoBehaviour
 {
 	public float growSpeed = 0.2f;
-	//public float shrinkSpeed = 0.04f;
+	public float shrinkSpeed = 0.04f;
 	public float minSize = 3.5f;
 	public float maxSize = 18;
 	bool canSee;
@@ -32,49 +32,49 @@ public class SnapScript : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Alpha2)) vision = 2;
 		if (Input.GetKeyDown(KeyCode.Alpha3)) vision = 3;
 
-		switch (vision)
+		switch (vision) //levels of vision (for now, press your keyboard 1, 2 and 3 to change them)
 		{
 			case (1):
-				growSpeed = 0.15f;
-				//shrinkSpeed = 0.04f;
-				maxSize = 15;
+				growSpeed = 100;
+				shrinkSpeed = 60;
+				maxSize = 12;
 				break;
 			case (2):
-				growSpeed = 0.2f;
-				//shrinkSpeed = 0.03f;
-				maxSize = 18;
+				growSpeed = 125;
+				shrinkSpeed = 60;
+				maxSize = 15;
 				break;
 			case (3):
-				growSpeed = 0.30f;
-				//shrinkSpeed = 0.02f;
-				maxSize = 24;
+				growSpeed = 150;
+				shrinkSpeed = 60;
+				maxSize = 18;
+				break;
+			case (4):
+				shrinkSpeed = 400;
 				break;
 		}
 
 		float xSpeed = player.GetComponent<MyCharacterController>().move.x;
-		float zSpeed = player.GetComponent<MyCharacterController>().move.z; //wellicht manager voor maken
+		float zSpeed = player.GetComponent<MyCharacterController>().move.z;
 
 		if (Input.GetButtonDown("Snap") && transform.localScale.x <= minSize)
 		{
 			if (xSpeed <= .25f && -.25f <= xSpeed && zSpeed <= .25f && -.25f <= zSpeed)
 			{
-				StartCoroutine("GrowCircle");
+				StartCoroutine("GrowCircle"); //start the growth of the sphere so you can see
 			}
 		}
 
+		size = transform.localScale.x; //so the raycast script can access it
+
+		//part of the old code
 		/*if (xSpeed >= .25f || -.25f >= xSpeed || zSpeed >= .25f || -.25f >= zSpeed)
 		{
 			canSee = false;
 		}*/
-
-		size = transform.localScale.x; //so the raycast script can access it
 	}
 
-	private void FixedUpdate()
-	{
-		
-	}
-
+	//old code with button needs to be kept pressed
 	/*void FixedUpdate()
 	{
 		if (Input.GetButton("Snap") && canSee)
@@ -102,40 +102,47 @@ public class SnapScript : MonoBehaviour
 
 	IEnumerator GrowCircle()
 	{
-		float i = 0;
-		while (i / 25 <= maxSize - minSize)
+		int tempvision = vision;
+		bool broken = false;
+		float i = 0; //the for loops didn't work well, so we decided to use while loops. The 'I' is kept from this
+		while (i / 25 <= maxSize - minSize) //grow the sphere
 		{
-			i += Time.deltaTime / 0.02f;
+			i += Time.deltaTime * growSpeed;
 			yield return null;
 			transform.localScale = new Vector3(minSize + i / 25, minSize + i / 25, minSize + i / 25);
-			Debug.Log("first: "+i);
+			if (Input.GetButtonDown("Snap") && transform.localScale.x > minSize + 1)
+			{
+				vision = 4;
+				broken = true;
+				break;
+			}
 		}
 
-		yield return new WaitForSeconds(0.5f); //a little extra time to see
-		Debug.Log("mid: " +i);
-		while (i >= minSize)
+		if (broken == false)
 		{
-			Debug.Log("end: "+i);
-			i -= Time.deltaTime / 0.02f;
+			yield return new WaitForSeconds(0.5f); //a little extra time to see
+		}
+
+		while (i >= minSize) //shrink the sphere
+		{
+			if (Input.GetButtonDown("Snap") && transform.localScale.x > minSize + 1)
+			{
+				broken = true;
+				vision = 4;
+			}
+			i -= Time.deltaTime * shrinkSpeed;
 			yield return null;
 			transform.localScale = new Vector3(minSize + i / 25, minSize + i / 25, minSize + i / 25);
 		}
-		/*
-		for (float i = transform.localScale.x; i/25 <= maxSize - minSize; i++)
+
+		transform.localScale = new Vector3(minSize, minSize, minSize); //reset the sphere
+		vision = tempvision;
+
+		if (broken == true)
 		{
-			transform.localScale = new Vector3(minSize + i/25, minSize + i/25, minSize + i/25);
-			//yield return new WaitForSeconds(0.0001f);
+			StartCoroutine("GrowCircle");
 		}
-		yield return new WaitForSeconds(0.5f); //a little extra time to see
-		for (float i = maxSize; i >= minSize; i = i - 0.02f)
-		{
-			transform.localScale = new Vector3(i, i, i);
-			//yield return new WaitForSeconds(0.00001f);
-		}
-		*/
-		transform.localScale = new Vector3(minSize, minSize, minSize);
-		//GetComponentInParent<RenewCircle>().RenewSphere();
-		//Destroy(gameObject);
+
 		yield return null;
 	}
 }
