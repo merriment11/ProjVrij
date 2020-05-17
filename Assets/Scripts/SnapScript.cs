@@ -6,6 +6,7 @@ public class SnapScript : MonoBehaviour
 {
 	public float growSpeed = 0.2f;
 	//public float shrinkSpeed = 0.04f;
+	public float minSize = 3.5f;
 	public float maxSize = 18;
 	bool canSee;
 	int vision = 1;
@@ -18,7 +19,7 @@ public class SnapScript : MonoBehaviour
 	private void Start()
 	{
 		transform.localPosition = new Vector3(0, 0, 0);
-		transform.localScale = new Vector3(3, 3, 3);
+		transform.localScale = new Vector3(minSize, minSize, minSize);
 
 		player = transform.parent.parent.gameObject;
 	}
@@ -34,7 +35,7 @@ public class SnapScript : MonoBehaviour
 			case (1):
 				growSpeed = 0.15f;
 				//shrinkSpeed = 0.04f;
-				maxSize = 12;
+				maxSize = 15;
 				break;
 			case (2):
 				growSpeed = 0.2f;
@@ -51,7 +52,7 @@ public class SnapScript : MonoBehaviour
 		float xSpeed = player.GetComponent<MyCharacterController>().move.x;
 		float zSpeed = player.GetComponent<MyCharacterController>().move.z; //wellicht manager voor maken
 
-		if (Input.GetButtonDown("Snap"))
+		if (Input.GetButtonDown("Snap") && transform.localScale.x <= minSize)
 		{
 			if (xSpeed <= .25f && -.25f <= xSpeed && zSpeed <= .25f && -.25f <= zSpeed)
 			{
@@ -94,19 +95,20 @@ public class SnapScript : MonoBehaviour
 
 	IEnumerator GrowCircle()
 	{
-		for (float i = transform.localScale.x; i/50 <= maxSize-3; i++)
+		for (float i = transform.localScale.x; i/25 <= maxSize - minSize; i++)
 		{
-			transform.localScale = new Vector3(3+i/50,3+i/50,3+i/50);
+			transform.localScale = new Vector3(minSize + i/25, minSize + i/25, minSize + i/25);
 			yield return new WaitForSeconds(0.000001f);
 		}
-		yield return new WaitForSeconds(1f); //a little extra time to see
-		for (float i = maxSize - 3; i / 50 <= maxSize - 3; i--)
+		yield return new WaitForSeconds(0.5f); //a little extra time to see
+		for (float i = maxSize; i >= minSize; i = i - 0.02f)
 		{
-			transform.localScale = new Vector3(3 + i / 50, 3 + i / 50, 3 + i / 50);
+			transform.localScale = new Vector3(i, i, i);
 			yield return new WaitForSeconds(0.000001f);
 		}
-		GetComponentInParent<RenewCircle>().RenewSphere();
-		Destroy(gameObject);
+		transform.localScale = new Vector3(minSize, minSize, minSize);
+		//GetComponentInParent<RenewCircle>().RenewSphere();
+		//Destroy(gameObject);
 		yield return null;
 	}
 }
