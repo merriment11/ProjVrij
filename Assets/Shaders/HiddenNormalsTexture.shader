@@ -8,7 +8,6 @@
         Tags 
 		{ 
 			"RenderType" = "Opaque" 
-			"RenderType" = "Transparent" 
 		}
 
         Pass
