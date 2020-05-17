@@ -7,7 +7,7 @@ public class SnapScript : MonoBehaviour
 	public float growSpeed = 0.2f;
 	public float shrinkSpeed = 0.04f;
 	public float maxSize = 18;
-	int vision = 2;
+	int vision = 1;
 	public float size;
 
 	bool canSee;
@@ -22,18 +22,18 @@ public class SnapScript : MonoBehaviour
 		{
 			case (1):
 				growSpeed = 0.15f;
-				shrinkSpeed = 0.06f;
-				maxSize = 15;
+				shrinkSpeed = 0.04f;
+				maxSize = 10;
 				break;
 			case (2):
 				growSpeed = 0.2f;
-				shrinkSpeed = 0.04f;
+				shrinkSpeed = 0.03f;
 				maxSize = 18;
 				break;
 			case (3):
 				growSpeed = 0.30f;
 				shrinkSpeed = 0.02f;
-				maxSize = 22;
+				maxSize = 26;
 				break;
 		}
 
