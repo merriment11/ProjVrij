@@ -16,6 +16,8 @@ public class SnapScript : MonoBehaviour
 	GameObject player;
 	public GameObject spherePrefab;
 
+	
+
 	private void Start()
 	{
 		transform.localPosition = new Vector3(0, 0, 0);
@@ -68,6 +70,11 @@ public class SnapScript : MonoBehaviour
 		size = transform.localScale.x; //so the raycast script can access it
 	}
 
+	private void FixedUpdate()
+	{
+		
+	}
+
 	/*void FixedUpdate()
 	{
 		if (Input.GetButton("Snap") && canSee)
@@ -95,17 +102,37 @@ public class SnapScript : MonoBehaviour
 
 	IEnumerator GrowCircle()
 	{
+		float i = 0;
+		while (i / 25 <= maxSize - minSize)
+		{
+			i += Time.deltaTime / 0.02f;
+			yield return null;
+			transform.localScale = new Vector3(minSize + i / 25, minSize + i / 25, minSize + i / 25);
+			Debug.Log("first: "+i);
+		}
+
+		yield return new WaitForSeconds(0.5f); //a little extra time to see
+		Debug.Log("mid: " +i);
+		while (i >= minSize)
+		{
+			Debug.Log("end: "+i);
+			i -= Time.deltaTime / 0.02f;
+			yield return null;
+			transform.localScale = new Vector3(minSize + i / 25, minSize + i / 25, minSize + i / 25);
+		}
+		/*
 		for (float i = transform.localScale.x; i/25 <= maxSize - minSize; i++)
 		{
 			transform.localScale = new Vector3(minSize + i/25, minSize + i/25, minSize + i/25);
-			yield return new WaitForSeconds(0.000001f);
+			//yield return new WaitForSeconds(0.0001f);
 		}
 		yield return new WaitForSeconds(0.5f); //a little extra time to see
 		for (float i = maxSize; i >= minSize; i = i - 0.02f)
 		{
 			transform.localScale = new Vector3(i, i, i);
-			yield return new WaitForSeconds(0.000001f);
+			//yield return new WaitForSeconds(0.00001f);
 		}
+		*/
 		transform.localScale = new Vector3(minSize, minSize, minSize);
 		//GetComponentInParent<RenewCircle>().RenewSphere();
 		//Destroy(gameObject);
