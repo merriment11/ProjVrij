@@ -11,5 +11,7 @@ public class DeletThis : MonoBehaviour
 
 		if (timer >= time)
 		{ Destroy(gameObject); }
+
+		delThisFUCK(int 5);
 	}
 }
