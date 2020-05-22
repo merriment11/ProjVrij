@@ -1319,10 +1319,10 @@ GameObject:
   - component: {fileID: 1112527696}
   - component: {fileID: 1112527698}
   - component: {fileID: 1112527697}
-  - component: {fileID: 1112527702}
   - component: {fileID: 1112527699}
   - component: {fileID: 1112527700}
   - component: {fileID: 1112527701}
+  - component: {fileID: 1112527703}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 3401408147210189839, guid: 16093e5ecd709394aa86b67138dd6d61,
     type: 3}
---- !u!114 &1112527702
+--- !u!114 &1112527703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1543,9 +1543,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112527692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e4650971380a4a479d7bcb631e1f85c, type: 3}
+  m_Script: {fileID: 11500000, guid: 35ff38d34a888764b8ea782ecdaf8600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PostProcessVolume: {fileID: 1112527697}
 --- !u!1 &1124067455
 GameObject:
   m_ObjectHideFlags: 0
