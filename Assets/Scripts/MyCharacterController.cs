@@ -19,6 +19,8 @@ public class MyCharacterController : MonoBehaviour
     Vector3 velocity;
     public Vector3 move = Vector3.zero;
 
+    public 
+
     void Start()
     {
         //hide the mouse
