@@ -31,7 +31,7 @@ public class Raycast : MonoBehaviour
 					}
 					else
 					{
-						PlayNarration();
+						//PlayNarration();
 					}
 				}
 			}
