@@ -3,6 +3,8 @@
 public class Raycast : MonoBehaviour
 {
 	private float range = 0f;
+	public NarrationManager nm;
+	public SnapScript ss;
 
 	void Update()
 	{
@@ -28,10 +30,16 @@ public class Raycast : MonoBehaviour
 					if (target.GetComponentInChildren<AudioSource>() != null)
 					{
 						target.GetComponentInChildren<AudioSource>().enabled = false;
+						target.tag = "Untagged";
 					}
 					else
 					{
-						//PlayNarration();
+						if (target.name == "Huistelefoon")
+						{
+							ss.vision = 2;
+						}
+						nm.PlayNarration(target.name);
+						target.tag = "Untagged";
 					}
 				}
 			}

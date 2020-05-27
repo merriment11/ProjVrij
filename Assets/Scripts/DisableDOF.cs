@@ -12,6 +12,7 @@ public class DisableDOF : MonoBehaviour
     {
 		if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 		{
+			//for debugging purposes
 			if (Input.GetKeyDown(KeyCode.Alpha8))
 			{
 				depthOfField.active = true;

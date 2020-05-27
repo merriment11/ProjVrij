@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class RenewCircle : MonoBehaviour
+public class RenewSphere : MonoBehaviour
 {
 	[SerializeField]
 	GameObject spherePrefab;
 
-    public void RenewSphere()
+    public void NewSphere()
 	{
 		Instantiate(spherePrefab, GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().rotation, transform);
 	}

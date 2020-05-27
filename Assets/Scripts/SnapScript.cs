@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class SnapScript : MonoBehaviour
 {
+	public int vision = 1;
 	private float growSpeed = 0.2f;
 	private float shrinkSpeed = 0.04f;
 	private float minSize = 3.5f;
 	private float maxSize = 18;
 	private float pauseShrink = 0.5f;
-	bool canSee;
-	int vision = 1;
 
-	public float size;
+	public float size; //for the raycast script
 
 	GameObject player;
 	public GameObject spherePrefab;
+
+	//bool canSee;
 
 	private void Start()
 	{
@@ -27,6 +28,7 @@ public class SnapScript : MonoBehaviour
 
 	private void Update()
 	{
+		//for debugging purposes
 		if (Input.GetKeyDown(KeyCode.Alpha1)) vision = 1;
 		if (Input.GetKeyDown(KeyCode.Alpha2)) vision = 2;
 		if (Input.GetKeyDown(KeyCode.Alpha3)) vision = 3;

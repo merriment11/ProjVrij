@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
@@ -18,9 +15,9 @@ public class KeyScript : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "PlayerModel")
         {
-            gm.GetKey(this.gameObject.name);
+            gm.GetKey(gameObject.name);
             PlaySound();
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         
     }
