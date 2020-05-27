@@ -5,38 +5,38 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int collectedKeys;
-    public bool NewKey;
+    public GameObject Door1;
+    public GameObject MainDoor;
     // Start is called before the first frame update
     void Start()
     {
-        collectedKeys = 0;
-        NewKey = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (collectedKeys == 1 && NewKey)
+    }
+
+    public void GetKey(string key)
+    {
+        if (key == "Key2") 
         {
-            Debug.Log(collectedKeys);
-            NewKey = false;
+            UnlockDoor1();
         }
-        if (collectedKeys == 2 && NewKey)
+        if (key == "Key3") 
         {
-            Debug.Log(collectedKeys);
-            NewKey = false;
-        }
-        if (collectedKeys == 3 && NewKey)
-        {
-            Debug.Log(collectedKeys);
-            UnlockArea();
-            NewKey = false;
+            UnlockMainDoor();
         }
     }
 
-    private void UnlockArea()
+    private void UnlockDoor1()
     {
-        Debug.Log("You did it");
+        Debug.Log("unlocked bathroom");
     }
+    private void UnlockMainDoor()
+    {
+        Debug.Log("unlocked main door");
+    }
+
 }
