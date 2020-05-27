@@ -9,7 +9,7 @@ public class MobileSphere : MonoBehaviour
     {
 		if (growing == false)
 		{
-			StartCoroutine("GrowCircle");
+			//StartCoroutine("GrowCircle");
 			growing = true;
 		}
 	}
