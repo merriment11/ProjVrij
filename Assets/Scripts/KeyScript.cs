@@ -15,7 +15,14 @@ public class KeyScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision); 
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name == "PlayerModel")
+        {
+            gm.GetKey(this.gameObject.name);
+            PlaySound();
+            this.gameObject.SetActive(false);
+        }
+        
     }
 
     private void PlaySound()

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void GetKey(string key)
     {
+        Debug.Log(key);
         if (key == "Key2") 
         {
             UnlockDoor1();
