@@ -5,6 +5,7 @@ public class Raycast : MonoBehaviour
 	private float range = 0f;
 	public NarrationManager nm;
 	public SnapScript ss;
+	public GameObject mobieltje;
 
 	void Update()
 	{
@@ -30,17 +31,17 @@ public class Raycast : MonoBehaviour
 					if (target.GetComponentInChildren<AudioSource>() != null)
 					{
 						target.GetComponentInChildren<AudioSource>().enabled = false;
-						target.tag = "Untagged";
 					}
-					else
+
+					nm.PlayNarration(target.name);
+
+					if (target.name == "Huistelefoon")
 					{
-						if (target.name == "Huistelefoon")
-						{
-							ss.vision = 2;
-						}
-						nm.PlayNarration(target.name);
-						target.tag = "Untagged";
+						ss.vision = 2;
+						mobieltje.SetActive(true);
 					}
+
+					target.tag = "Untagged";
 				}
 			}
 		}

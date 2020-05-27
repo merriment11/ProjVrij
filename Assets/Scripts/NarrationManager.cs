@@ -26,10 +26,6 @@ public class NarrationManager : MonoBehaviour
 			case ("kussen"):
 				//Narration.clip = NarrationKussen;
 				break;
-			case ("huistelefoon"):
-				//Narration.clip = NarrationHuistelefoon;
-				//mobieltje moet nu ook af gaan (soundManager maken maybe)
-				break;
 			case ("mobieltje"):
 				//Narration.clip = NarrationMobieltje;
 				break;
