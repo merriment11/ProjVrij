@@ -8,6 +8,7 @@ public class SnapScript : MonoBehaviour
 	private float shrinkSpeed = 0.04f;
 	private float minSize = 3.5f;
 	private float maxSize = 18;
+	private float pauseShrink = 0.5f;
 	bool canSee;
 	int vision = 1;
 
@@ -33,19 +34,25 @@ public class SnapScript : MonoBehaviour
 		switch (vision) //levels of vision (for now, press your keyboard 1, 2 and 3 to change them)
 		{
 			case (1):
-				growSpeed = 100;
-				shrinkSpeed = 60;
+				growSpeed = 250;
+				shrinkSpeed = 500;
+				minSize = 3.5f;
 				maxSize = 12;
+				pauseShrink = 0.5f;
 				break;
 			case (2):
 				growSpeed = 125;
 				shrinkSpeed = 60;
+				minSize = 3.5f;
 				maxSize = 15;
+				pauseShrink = 0.5f;
 				break;
 			case (3):
 				growSpeed = 150;
 				shrinkSpeed = 60;
+				minSize = 3.5f;
 				maxSize = 18;
+				pauseShrink = 0.5f;
 				break;
 			case (4):
 				shrinkSpeed = 400;
@@ -118,7 +125,7 @@ public class SnapScript : MonoBehaviour
 
 		if (broken == false)
 		{
-			yield return new WaitForSeconds(0.5f); //a little extra time to see
+			yield return new WaitForSeconds(pauseShrink); //a little extra time to see
 		}
 
 		while (i >= minSize) //shrink the sphere

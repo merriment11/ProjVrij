@@ -25,7 +25,14 @@ public class Raycast : MonoBehaviour
 				GameObject target = hit.transform.gameObject;
 				if (target != null)
 				{
-					target.GetComponentInChildren<AudioSource>().enabled = false;
+					if (target.GetComponentInChildren<AudioSource>() != null)
+					{
+						target.GetComponentInChildren<AudioSource>().enabled = false;
+					}
+					else
+					{
+						PlayNarration();
+					}
 				}
 			}
 		}
