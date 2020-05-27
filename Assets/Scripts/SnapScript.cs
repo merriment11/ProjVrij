@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SnapScript : MonoBehaviour
 {
-	public float growSpeed = 0.2f;
-	public float shrinkSpeed = 0.04f;
-	public float minSize = 3.5f;
-	public float maxSize = 18;
+	private float growSpeed = 0.2f;
+	private float shrinkSpeed = 0.04f;
+	private float minSize = 3.5f;
+	private float maxSize = 18;
 	bool canSee;
 	int vision = 1;
 
@@ -15,8 +15,6 @@ public class SnapScript : MonoBehaviour
 
 	GameObject player;
 	public GameObject spherePrefab;
-
-	
 
 	private void Start()
 	{
