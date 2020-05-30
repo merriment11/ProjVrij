@@ -9,7 +9,7 @@ public class Raycast : MonoBehaviour
 
 	private void Start()
 	{
-		ss = GetComponentInParent<SnapScript>();
+		ss = GetComponentInChildren<SnapScript>();
 	}
 
 	void Update()
@@ -18,38 +18,43 @@ public class Raycast : MonoBehaviour
 
 		if (Input.GetButtonDown("Fire1"))
 		{
-			ShootRay();
+			GameObject target = ShootRay();
+
+			if (target != null)
+			{
+				Debug.Log(target);
+				
+				switch (target.name)
+				{
+					case ("Huistelefoon"):
+						{
+							ss.vision = 2;
+							mobieltje.SetActive(true);
+						}
+						break;
+				}
+
+				if (target.GetComponentInChildren<AudioSource>() != null)
+				{
+					target.GetComponentInChildren<AudioSource>().enabled = false;
+				}
+
+				nm.PlayNarration(target.name);
+				target.tag = "Untagged";
+			}
 		}
 	}
 
-	void ShootRay()
+	GameObject ShootRay()
 	{
 		RaycastHit hit;
 		if (Physics.Raycast(transform.position, transform.forward, out hit, range))
 		{
-			Debug.Log(hit.transform.gameObject);
 			if (hit.transform.gameObject.tag == "Clickable")
 			{
-				GameObject target = hit.transform.gameObject;
-				if (target != null)
-				{
-					if (target.GetComponentInChildren<AudioSource>() != null)
-					{
-						target.GetComponentInChildren<AudioSource>().enabled = false;
-					}
-
-					Debug.Log(target.name);
-					nm.PlayNarration(target.name);
-
-					if (target.name == "Huistelefoon")
-					{
-						ss.vision = 2;
-						mobieltje.SetActive(true);
-					}
-
-					target.tag = "Untagged";
-				}
+				return hit.transform.gameObject;
 			}
 		}
+		return null;
 	}
 }
