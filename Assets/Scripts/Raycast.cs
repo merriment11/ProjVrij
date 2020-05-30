@@ -7,6 +7,11 @@ public class Raycast : MonoBehaviour
 	public SnapScript ss;
 	public GameObject mobieltje;
 
+	private void Start()
+	{
+		ss = GetComponentInParent<SnapScript>();
+	}
+
 	void Update()
 	{
 		range = GetComponentInChildren<SnapScript>().size;
@@ -33,6 +38,7 @@ public class Raycast : MonoBehaviour
 						target.GetComponentInChildren<AudioSource>().enabled = false;
 					}
 
+					Debug.Log(target.name);
 					nm.PlayNarration(target.name);
 
 					if (target.name == "Huistelefoon")

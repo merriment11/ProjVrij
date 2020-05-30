@@ -29,6 +29,8 @@ public class NarrationManager : MonoBehaviour
 			case ("mobieltje"):
 				//Narration.clip = NarrationMobieltje;
 				break;
+			default:
+				break;
 		}
 
 		Narration.Play();
