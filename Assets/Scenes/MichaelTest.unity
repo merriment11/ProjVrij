@@ -1080,7 +1080,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: bbba22df26222cd4e91d1d0605afb98d,
         type: 3}
       propertyPath: m_Name
-      value: kamer_tryout_reverse_v2
+      value: Interieur
       objectReference: {fileID: 0}
     - target: {fileID: -392246648789513406, guid: bbba22df26222cd4e91d1d0605afb98d,
         type: 3}
