@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Door1;
     public GameObject MainDoor;
+    public GameObject MainDoorRotator;
+    [SerializeField] bool openingMainDoor;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (openingMainDoor || Input.GetKey(KeyCode.E))
+        {
+            //Debug.Log("unlocking main door1");
+            MainDoor.transform.RotateAround(MainDoorRotator.transform.position, Vector3.up, 30 * Time.deltaTime);
+            //Debug.Log(MainDoor.transform.localRotation.y);
+            if (MainDoor.transform.localRotation.eulerAngles.y > 90)
+            {
+                openingMainDoor = false;
+            }
+        }
     }
 
     public void GetKey(string key)
@@ -27,7 +40,8 @@ public class GameManager : MonoBehaviour
         }
         if (key == "Key3") 
         {
-            UnlockMainDoor();
+            Debug.Log("unlocked main door1");
+            openingMainDoor = true;
         }
     }
 
@@ -35,9 +49,14 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("unlocked bathroom");
     }
-    private void UnlockMainDoor()
-    {
-        Debug.Log("unlocked main door");
-    }
+   // private IEnumerator UnlockMainDoor()
+   // {
+     //   Debug.Log("unlocked main door2");
+        
+     //   float i = 0; //the for loops didn't work well, so we decided to use while loops. The 'I' is kept from this
+     //   MainDoor.transform.RotateAround(MainDoorRotator.transform.position, Vector3.up, 40 * Time.deltaTime);
+
+    //    return null;
+   // }
 
 }

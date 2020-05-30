@@ -3,12 +3,13 @@
 public class KeyScript : MonoBehaviour
 {
     GameManager gm;
+    Raycast ray;
 
     private void Start()
     {
         gm = GameObject.Find("Player").GetComponent<GameManager>();
     }
-  
+
 
     private void OnCollisionEnter(Collision collision)
     {
