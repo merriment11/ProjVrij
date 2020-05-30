@@ -16,6 +16,7 @@ public class SnapScript : MonoBehaviour
 	GameObject player;
 	public GameObject spherePrefab;
 
+	public AudioSource Right;
 	//bool canSee;
 
 	private void Start()
@@ -112,6 +113,7 @@ public class SnapScript : MonoBehaviour
 		int tempvision = vision;
 		bool broken = false;
 		float i = 0; //the for loops didn't work well, so we decided to use while loops. The 'I' is kept from this
+		Right.Play();
 		while (i / 25 <= maxSize - minSize) //grow the sphere
 		{
 			i += Time.deltaTime * growSpeed;
