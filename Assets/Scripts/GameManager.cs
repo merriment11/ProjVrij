@@ -8,25 +8,28 @@ public class GameManager : MonoBehaviour
     public GameObject Door1;
     public GameObject MainDoor;
     public GameObject MainDoorRotator;
-    [SerializeField] bool openingMainDoor;
+    public bool clickedKey;
+    public bool clickedDoor;
    
     // Start is called before the first frame update
     void Start()
     {
-
+        clickedDoor = false;
+        clickedKey = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (openingMainDoor || Input.GetKey(KeyCode.E))
+        if (clickedKey && clickedDoor)
         {
             //Debug.Log("unlocking main door1");
             MainDoor.transform.RotateAround(MainDoorRotator.transform.position, Vector3.up, 30 * Time.deltaTime);
             //Debug.Log(MainDoor.transform.localRotation.y);
             if (MainDoor.transform.localRotation.eulerAngles.y > 90)
             {
-                openingMainDoor = false;
+                clickedKey = false;
+                clickedDoor = false;
             }
         }
     }
@@ -41,7 +44,7 @@ public class GameManager : MonoBehaviour
         if (key == "Key3") 
         {
             Debug.Log("unlocked main door1");
-            openingMainDoor = true;
+            clickedKey = true;
         }
     }
 

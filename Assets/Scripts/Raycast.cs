@@ -4,12 +4,15 @@ public class Raycast : MonoBehaviour
 {
 	private float range = 0f;
 	public NarrationManager nm;
+	public GameManager gm;
 	public SnapScript ss;
 	public GameObject mobieltje;
+	public KeyScript ks;
 
 	private void Start()
 	{
 		ss = GetComponentInChildren<SnapScript>();
+		gm = GameObject.Find("Player").GetComponent<GameManager>();
 	}
 
 	void Update()
@@ -30,6 +33,17 @@ public class Raycast : MonoBehaviour
 						{
 							ss.vision = 2;
 							mobieltje.SetActive(true);
+						}
+						break;
+					case ("Key3"):
+						{
+							gm.clickedKey = true;
+							target.SetActive(false); 
+						}
+						break;
+					case ("Door"):
+						{
+							if (gm.clickedKey) gm.clickedDoor = true;
 						}
 						break;
 				}
