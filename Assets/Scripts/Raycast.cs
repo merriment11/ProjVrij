@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Raycast : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Raycast : MonoBehaviour
 	public GameObject Key1;
 	public GameObject Key2;
 	public GameObject Key3;
+	public GameObject flash;
 	public KeyScript ks;
 
 	private void Start()
@@ -44,6 +46,8 @@ public class Raycast : MonoBehaviour
 							Key1.SetActive(true);
 							Key2.SetActive(true);
 							Key3.SetActive(true);
+							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
+							flash.GetComponent<Image>().color = Color.clear;
 						}
 						break;
 					case ("Key3"):
