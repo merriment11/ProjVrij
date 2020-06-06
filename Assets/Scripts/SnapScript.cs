@@ -57,7 +57,7 @@ public class SnapScript : MonoBehaviour
 				maxSize = 18;
 				pauseShrink = 0.5f;
 				break;
-			case (4):
+			case (4): //this triggers if you press too early
 				shrinkSpeed = 400;
 				break;
 		}

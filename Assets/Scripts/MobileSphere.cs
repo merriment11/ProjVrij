@@ -22,7 +22,6 @@ public class MobileSphere : MonoBehaviour
 	{
 		if (other.transform.name == "PlayerModel")
 		{
-			Debug.Log("hit");
 			flashfade = flash.GetComponent<FlashFade>();
 			StartCoroutine(flashfade.FadeToClear(flash.GetComponent<Image>(), 2));
 		}
@@ -30,12 +29,17 @@ public class MobileSphere : MonoBehaviour
 
 	IEnumerator GrowSphere()
 	{
-		for (float i = 0; i < 5; i += Time.deltaTime)
+		transform.localScale = new Vector3(1, 1, 1);
+		yield return new WaitForSeconds(2f);
+
+		transform.parent.GetComponentInChildren<AudioSource>().Play();
+
+		for (float i = 0; i < 2; i += Time.deltaTime)
 		{
 			yield return null;
-			transform.localScale = new Vector3(1 + i*6, 1 + i*6, 1 + i*6);
+			transform.localScale = new Vector3(1 + i*10, 1 + i*10, 1 + i*10);
 		}
-
+		
 		growing = false;
 		yield return null;
 	}
