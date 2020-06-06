@@ -7,6 +7,9 @@ public class Raycast : MonoBehaviour
 	public GameManager gm;
 	public SnapScript ss;
 	public GameObject mobieltje;
+	public GameObject Key1;
+	public GameObject Key2;
+	public GameObject Key3;
 	public KeyScript ks;
 
 	private void Start()
@@ -35,10 +38,18 @@ public class Raycast : MonoBehaviour
 							mobieltje.SetActive(true);
 						}
 						break;
+					case ("Mobieltje"):
+						{
+							ss.vision = 3;
+							Key1.SetActive(true);
+							Key2.SetActive(true);
+							Key3.SetActive(true);
+						}
+						break;
 					case ("Key3"):
 						{
 							gm.clickedKey = true;
-							target.SetActive(false); 
+							target.SetActive(false);
 						}
 						break;
 					case ("Door"):
