@@ -5,6 +5,7 @@ public class Raycast : MonoBehaviour
 {
 	private float range = 0f;
 	public NarrationManager nm;
+	public PromptManager pm;
 	public GameManager gm;
 	public SnapScript ss;
 	public GameObject mobieltje;
@@ -18,6 +19,7 @@ public class Raycast : MonoBehaviour
 	{
 		ss = GetComponentInChildren<SnapScript>();
 		gm = GameObject.Find("Player").GetComponent<GameManager>();
+		nm.pm = pm;
 	}
 
 	void Update()
@@ -27,11 +29,9 @@ public class Raycast : MonoBehaviour
 		if (Input.GetButtonDown("Fire1"))
 		{
 			GameObject target = ShootRay();
-
 			if (target != null)
 			{
 				Debug.Log(target);
-				
 				switch (target.name)
 				{
 					case ("Huistelefoon"):

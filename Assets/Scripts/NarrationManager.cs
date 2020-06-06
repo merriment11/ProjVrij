@@ -2,6 +2,7 @@
 
 public class NarrationManager : MonoBehaviour
 {
+	public PromptManager pm;
 	AudioSource Narration;
 	public AudioClip NarrationStart;
 	public AudioClip NarrationKussen;
@@ -21,13 +22,16 @@ public class NarrationManager : MonoBehaviour
 		switch (name)
 		{
 			case ("start"):
-				//Narration.clip = NarrationStart;
+				Narration.clip = NarrationStart;
+				break;
+			case ("2"):
+				pm.PlayPrompt("shoot");
 				break;
 			case ("kussen"):
-				//Narration.clip = NarrationKussen;
+				Narration.clip = NarrationKussen;
 				break;
 			case ("mobieltje"):
-				//Narration.clip = NarrationMobieltje;
+				Narration.clip = NarrationMobieltje;
 				break;
 			default:
 				break;
