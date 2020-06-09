@@ -2,41 +2,65 @@
 
 public class NarrationManager : MonoBehaviour
 {
-	public PromptManager pm;
 	AudioSource Narration;
 	public AudioClip NarrationStart;
+	public AudioClip NarrationHuiskamer; //trigger zones need implementation
 	public AudioClip NarrationKussen;
 	public AudioClip NarrationHuistelefoon;
+	public AudioClip NarrationMobieltjeVoorInteractie;
 	public AudioClip NarrationMobieltje;
+	public AudioClip NarrationStudeerkamer; //trigger zones need implementation
+	public AudioClip DoorLocked;
+	public AudioClip WrongKey;
+	public AudioClip CorrectKey;
+	public AudioClip NarrationHuiskamer2; //trigger zones need implementation
+	public AudioClip Keuken; //trigger zones need implementation
+
+	[HideInInspector]
+	public PromptManager pm;
 
 	void Start()
     {
+		pm = GetComponent<PromptManager>();
 		Narration = GetComponent<AudioSource>();
-		PlayNarration("start");
+		PlayNarration("Start");
     }
 
 	public void PlayNarration(string name)
 	{
-		Narration.Stop();
+		if (Narration.isPlaying)
+		{
+			Narration.Stop();
+		}
 
 		switch (name)
 		{
-			case ("start"):
+			case ("Start"):
 				Narration.clip = NarrationStart;
 				break;
-			case ("2"):
-				pm.PlayPrompt("shoot");
-				break;
-			case ("kussen"):
+			case ("Kussen"):
 				Narration.clip = NarrationKussen;
 				break;
-			case ("mobieltje"):
+			case ("Huistelefoon"):
+				Narration.clip = NarrationHuistelefoon;
+				break;
+			case ("MobieltjeVoorInteractie"):
+				Narration.clip = NarrationMobieltjeVoorInteractie;
+				break;
+			case ("Mobieltje"):
 				Narration.clip = NarrationMobieltje;
 				break;
 			default:
+				if (!Narration.isPlaying)
+				{
+					Narration.clip = null;
+				}
 				break;
 		}
 
-		Narration.Play();
+		if (!Narration.isPlaying)
+		{
+			Narration.Play();
+		}
 	}
 }

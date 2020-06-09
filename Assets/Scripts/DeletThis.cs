@@ -2,14 +2,15 @@
 
 public class DeletThis : MonoBehaviour
 {
+	//this script exists to delete prompts after an amount of seconds
 	float timer;
-	float time = 3f;
+	public float seconds = 3f;
 
     void Update()
     {
-		timer+=Time.deltaTime;
+		timer += Time.deltaTime;
 
-		if (timer >= time)
+		if (timer >= seconds)
 		{ Destroy(gameObject); }
 	}
 }

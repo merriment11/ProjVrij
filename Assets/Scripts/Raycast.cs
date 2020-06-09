@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Raycast : MonoBehaviour
 {
@@ -37,15 +38,15 @@ public class Raycast : MonoBehaviour
 					case ("Huistelefoon"):
 						{
 							ss.vision = 2;
-							mobieltje.SetActive(true);
+							StartCoroutine(Activate(mobieltje, 14f));
 						}
 						break;
 					case ("Mobieltje"):
 						{
 							ss.vision = 3;
-							Key1.SetActive(true);
-							Key2.SetActive(true);
-							Key3.SetActive(true);
+							StartCoroutine(Activate(Key1, 10f));
+							StartCoroutine(Activate(Key2, 10f));
+							StartCoroutine(Activate(Key3, 10f));
 							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
 							flash.GetComponent<Image>().color = Color.clear;
 						}
@@ -85,5 +86,23 @@ public class Raycast : MonoBehaviour
 			}
 		}
 		return null;
+	}
+
+	IEnumerator Activate(GameObject go, float timer)
+	{
+
+		while (timer > 0)
+		{
+			yield return new WaitForSeconds (1);
+			timer--;
+		}
+
+		if (timer  == 0)
+		{
+			go.SetActive(true);
+			nm.PlayNarration(go.name + "VoorInteractie");
+		}
+
+		yield return null;
 	}
 }
