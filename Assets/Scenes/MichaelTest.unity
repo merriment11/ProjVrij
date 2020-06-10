@@ -1405,6 +1405,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 491482113}
     m_Modifications:
+    - target: {fileID: -8221963241362319999, guid: aaecdae0d364bf2479158e94f4e31aed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
     - target: {fileID: -4216859302048453862, guid: aaecdae0d364bf2479158e94f4e31aed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1475,11 +1480,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: -3918130835389629778, guid: aaecdae0d364bf2479158e94f4e31aed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6cade11621136814ab9b6a5e8755d80c, type: 2}
     - target: {fileID: -927199367670048503, guid: aaecdae0d364bf2479158e94f4e31aed,
         type: 3}
       propertyPath: m_Name
       value: nachtkastje
       objectReference: {fileID: 0}
+    - target: {fileID: 79621727649304875, guid: aaecdae0d364bf2479158e94f4e31aed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+    - target: {fileID: 1197654348229058851, guid: aaecdae0d364bf2479158e94f4e31aed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+    - target: {fileID: 8172931230855384636, guid: aaecdae0d364bf2479158e94f4e31aed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaecdae0d364bf2479158e94f4e31aed, type: 3}
 --- !u!4 &601395177 stripped
@@ -3383,7 +3408,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
     - target: {fileID: -927199367670048503, guid: ff08b41fa4ccb8940a646ad09f2401fc,
         type: 3}
       propertyPath: m_Name
