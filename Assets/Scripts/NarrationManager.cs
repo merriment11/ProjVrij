@@ -40,6 +40,7 @@ public class NarrationManager : MonoBehaviour
 				break;
 			case ("Kussen"):
 				Narration.clip = NarrationKussen;
+				pm.PlayPrompt("shoot");
 				break;
 			case ("Huistelefoon"):
 				Narration.clip = NarrationHuistelefoon;

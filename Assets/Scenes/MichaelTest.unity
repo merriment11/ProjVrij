@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
@@ -874,7 +874,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
@@ -1865,7 +1865,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
@@ -3235,7 +3235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967294
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1365921989
 Transform:
   m_ObjectHideFlags: 0
@@ -4308,8 +4308,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861531641}
-  - component: {fileID: 1861531642}
   - component: {fileID: 1861531643}
+  - component: {fileID: 1861531642}
   - component: {fileID: 1861531644}
   m_Layer: 0
   m_Name: Narrator
@@ -4782,7 +4782,7 @@ PrefabInstance:
     - target: {fileID: 7661199037109316136, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: m_Volume
-      value: 0.761
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e77435cefbc626448c8f17c0d9ebc20, type: 3}

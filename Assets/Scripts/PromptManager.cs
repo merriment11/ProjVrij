@@ -9,6 +9,7 @@ public class PromptManager : MonoBehaviour
 	{
 		PlayPrompt("start");
 	}
+
 	public void PlayPrompt(string name)
 	{
 		switch (name)

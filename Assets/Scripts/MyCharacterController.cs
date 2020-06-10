@@ -19,9 +19,7 @@ public class MyCharacterController : MonoBehaviour
     Vector3 velocity;
     public Vector3 move = Vector3.zero;
 
-    public 
-
-    void Start()
+    public void Start()
     {
         //hide the mouse
         Cursor.lockState = CursorLockMode.Locked;
@@ -47,12 +45,6 @@ public class MyCharacterController : MonoBehaviour
         move = transform.right * x + transform.forward * z;
 		
         player.Move(move * speed * Time.deltaTime);
-
-        //gravity
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
-        }
 
         velocity.y += gravity * Time.deltaTime;
 
