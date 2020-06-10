@@ -29,7 +29,7 @@ public class MobileSphere : MonoBehaviour
 
 	IEnumerator GrowSphere()
 	{
-		transform.localScale = new Vector3(1, 1, 1);
+		transform.localScale = new Vector3(.1f, .1f, .1f);
 		yield return new WaitForSeconds(2f);
 
 		transform.parent.GetComponentInChildren<AudioSource>().Play();
@@ -37,7 +37,7 @@ public class MobileSphere : MonoBehaviour
 		for (float i = 0; i < 2; i += Time.deltaTime)
 		{
 			yield return null;
-			transform.localScale = new Vector3(1 + i*10, 1 + i*10, 1 + i*10);
+			transform.localScale = new Vector3(1 + i*i*20, 1 + i*i*20, 1 + i*i*20);
 		}
 		
 		growing = false;
