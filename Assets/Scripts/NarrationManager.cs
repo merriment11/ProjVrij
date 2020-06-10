@@ -13,7 +13,7 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
-	public AudioClip NarrationHuiskamer2; //trigger zones need implementation
+	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
 	public AudioClip Keuken; //trigger zones need implementation
 
 	[HideInInspector]
@@ -40,6 +40,7 @@ public class NarrationManager : MonoBehaviour
 				break;
 			case ("Kussen"):
 				Narration.clip = NarrationKussen;
+				//this needs to be triggered by a trigger zone
 				pm.PlayPrompt("shoot");
 				break;
 			case ("Huistelefoon"):
