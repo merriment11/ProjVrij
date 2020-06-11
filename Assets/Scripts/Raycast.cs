@@ -51,15 +51,26 @@ public class Raycast : MonoBehaviour
 							flash.GetComponent<Image>().color = Color.clear;
 						}
 						break;
-					case ("Key3"):
+					case ("Key2"):
 						{
-							gm.clickedKey = true;
+							gm.clickedBathroomKey = true;
 							target.SetActive(false);
 						}
 						break;
-					case ("Door"):
+					case ("Key3"):
 						{
-							if (gm.clickedKey) gm.clickedDoor = true;
+							gm.clickedMainKey = true;
+							target.SetActive(false);
+						}
+						break;
+					case ("MainDoor"):
+						{
+							if (gm.clickedMainKey) gm.clickedDoor = true;
+						}
+						break; 
+					case("BathroomDoor"):
+						{
+							if (gm.clickedBathroomKey) gm.clickedDoor = true;
 						}
 						break;
 				}

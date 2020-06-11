@@ -16,7 +16,7 @@ public class KeyScript : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "PlayerModel")
         {
-            gm.GetKey(gameObject.name);
+           // gm.GetKey(gameObject.name);
             PlaySound();
             gameObject.SetActive(false);
         }
