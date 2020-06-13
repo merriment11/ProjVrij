@@ -39,18 +39,20 @@ public class Raycast : MonoBehaviour
 						{
 							ss.vision = 2;
 							StartCoroutine(Activate(mobieltje, 14f));
+							GameManager.instance.puzzle = 2;
 						}
 						break;
 					case ("Mobieltje"):
 						{
 							ss.vision = 3;
-							//StartCoroutine(Activate(Key1, 10f)); was used previously, not anymore
 							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
 							flash.GetComponent<Image>().color = Color.clear;
 						}
 						break;
 					case ("Boekenkast"):
 						{
+							GameManager.instance.puzzle = 3;
+							//StartCoroutine(Activate(Key1, 10f)); was used previously, not anymore
 							StartCoroutine(Activate(Key2, 10f));
 							StartCoroutine(Activate(Key3, 10f));
 						}
@@ -112,7 +114,7 @@ public class Raycast : MonoBehaviour
 			timer--;
 		}
 
-		if (timer  == 0)
+		if (timer  <= 0)
 		{
 			go.SetActive(true);
 			nm.PlayNarration(go.name + "VoorInteractie");

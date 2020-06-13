@@ -14,7 +14,7 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
 	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
-	public AudioClip Keuken; //trigger zones need implementation
+	public AudioClip NarrationKeuken; //trigger zones need implementation
 
 	[HideInInspector]
 	public PromptManager pm;
@@ -26,6 +26,15 @@ public class NarrationManager : MonoBehaviour
 		PlayNarration("Start");
     }
 
+	private void Update()
+	{
+		if (Input.GetButtonDown("Repeat"))
+		{
+			Narration.Stop();
+			Narration.Play();
+		}
+	}
+
 	public void PlayNarration(string name)
 	{
 		if (Narration.isPlaying)
@@ -36,24 +45,26 @@ public class NarrationManager : MonoBehaviour
 		switch (name)
 		{
 			case ("Start"):
-				Narration.clip = NarrationStart;
+				{ Narration.clip = NarrationStart; }
 				break;
 			case ("Kussen"):
-				Narration.clip = NarrationKussen;
-				//this needs to be triggered by a trigger zone
-				pm.PlayPrompt("shoot");
+				{ Narration.clip = NarrationKussen; }
+				pm.PlayPrompt("static");
 				break;
 			case ("Huistelefoon"):
-				Narration.clip = NarrationHuistelefoon;
+				{ Narration.clip = NarrationHuistelefoon; }
 				break;
 			case ("MobieltjeVoorInteractie"):
-				Narration.clip = NarrationMobieltjeVoorInteractie;
+				{
+					Narration.clip = NarrationMobieltjeVoorInteractie;
+					pm.PlayPrompt("mobiel");
+				}
 				break;
 			case ("Mobieltje"):
-				Narration.clip = NarrationMobieltje;
+				{ Narration.clip = NarrationMobieltje; }
 				break;
 			case ("Boekenkast"):
-				Narration.clip = NarrationStudeerkamer;
+				{ Narration.clip = NarrationStudeerkamer; }
 				break;
 			case ("BathroomDoor"):
 				if (GameManager.instance.clickedBathroomKey)
@@ -69,6 +80,17 @@ public class NarrationManager : MonoBehaviour
 				else
 				{ Narration.clip = DoorLocked; }
 				break;
+
+			case ("TriggerzoneHuiskamer"): //triggerzone 1
+				if (GameManager.instance.puzzle == 1)
+				{ Narration.clip = NarrationHuiskamer; }
+				if (GameManager.instance.puzzle == 3)
+				{ Narration.clip = NarrationHuiskamer2; }
+				break;
+			case ("TriggerzoneKeuken"): //triggerzone 1
+				{ Narration.clip = NarrationKeuken; }
+				break;
+
 			default:
 				if (!Narration.isPlaying)
 				{

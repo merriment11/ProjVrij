@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject bathroomDoor;
+	public NarrationManager nm;
+	public PromptManager pm;
+
+	public GameObject bathroomDoor;
     public GameObject bathroomDoorRotator;
     public GameObject MainDoor;
     public GameObject MainDoorRotator;
     public bool clickedMainKey;
     public bool clickedBathroomKey;
     public bool clickedDoor;
+
+	//A count for what puzzle the player is at
+	public int puzzle = 1;
 
 	internal static GameManager instance = null;	
 
