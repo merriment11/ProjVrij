@@ -5,9 +5,10 @@ using System.Collections;
 public class Raycast : MonoBehaviour
 {
 	private float range = 0f;
+
 	public NarrationManager nm;
 	public PromptManager pm;
-	public GameManager gm;
+
 	public SnapScript ss;
 	public GameObject mobieltje;
 	public GameObject Key1;
@@ -19,7 +20,6 @@ public class Raycast : MonoBehaviour
 	private void Start()
 	{
 		ss = GetComponentInChildren<SnapScript>();
-		gm = GameObject.Find("Player").GetComponent<GameManager>();
 		nm.pm = pm;
 	}
 
@@ -57,24 +57,24 @@ public class Raycast : MonoBehaviour
 						break;
 					case ("Key2"):
 						{
-							gm.clickedBathroomKey = true;
+							GameManager.instance.clickedBathroomKey = true;
 							target.SetActive(false);
 						}
 						break;
 					case ("Key3"):
 						{
-							gm.clickedMainKey = true;
+							GameManager.instance.clickedMainKey = true;
 							target.SetActive(false);
 						}
 						break;
 					case ("MainDoor"):
 						{
-							if (gm.clickedMainKey) gm.clickedDoor = true;
+							if (GameManager.instance.clickedMainKey) GameManager.instance.clickedDoor = true;
 						}
 						break; 
 					case("BathroomDoor"):
 						{
-							if (gm.clickedBathroomKey) gm.clickedDoor = true;
+							if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
 						}
 						break;
 				}

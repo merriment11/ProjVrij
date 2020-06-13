@@ -52,6 +52,23 @@ public class NarrationManager : MonoBehaviour
 			case ("Mobieltje"):
 				Narration.clip = NarrationMobieltje;
 				break;
+			case ("Boekenkast"):
+				Narration.clip = NarrationStudeerkamer;
+				break;
+			case ("BathroomDoor"):
+				if (GameManager.instance.clickedBathroomKey)
+				{ Narration.clip = null; } //deze hebben we niet
+				else
+				{ Narration.clip = DoorLocked; }
+				break;
+			case ("MainDoor"):
+				if (GameManager.instance.clickedMainKey)
+				{ Narration.clip = CorrectKey; }
+				else if (GameManager.instance.clickedBathroomKey)
+				{ Narration.clip = WrongKey; }
+				else
+				{ Narration.clip = DoorLocked; }
+				break;
 			default:
 				if (!Narration.isPlaying)
 				{

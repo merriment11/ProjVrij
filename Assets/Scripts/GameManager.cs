@@ -12,9 +12,24 @@ public class GameManager : MonoBehaviour
     public bool clickedMainKey;
     public bool clickedBathroomKey;
     public bool clickedDoor;
-   
-    // Start is called before the first frame update
-    void Start()
+
+	internal static GameManager instance = null;	
+
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else if (instance != this)
+		{
+			Destroy(gameObject);
+			return;
+		}
+	}
+
+	// Start is called before the first frame update
+	void Start()
     {
         clickedDoor = false;
         clickedMainKey = false;
