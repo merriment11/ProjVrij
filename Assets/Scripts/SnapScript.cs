@@ -36,6 +36,13 @@ public class SnapScript : MonoBehaviour
 
 		switch (vision) //levels of vision (for now, press your keyboard 1, 2 and 3 to change them)
 		{
+			case (0):
+				growSpeed = 200;
+				shrinkSpeed = 125;
+				minSize = 3.5f;
+				maxSize = 500;
+				pauseShrink = 0.5f;
+				break;
 			case (1):
 				growSpeed = 200;
 				shrinkSpeed = 125;
