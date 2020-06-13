@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7661199036443531259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.71, z: 0}
+  m_LocalScale: {x: 1.5709, y: 1.5709, z: 1.5709}
   m_Children: []
   m_Father: {fileID: 7661199036600438790}
   m_RootOrder: 0
@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 7661199036600438789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.47, y: 1.5, z: 7.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4934, y: 1.4934, z: 1.4934}
   m_Children:
   - {fileID: 7661199036443531260}
   - {fileID: 7661199036504723310}
@@ -213,8 +213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed1737170112b14585cdc1a131b275f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door1: {fileID: 0}
+  bathroomDoor: {fileID: 0}
+  bathroomDoorRotator: {fileID: 0}
   MainDoor: {fileID: 0}
+  MainDoorRotator: {fileID: 0}
+  clickedMainKey: 0
+  clickedBathroomKey: 0
+  clickedDoor: 0
 --- !u!1 &7661199036875684156
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7661199036875684156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -0.25}
+  m_LocalPosition: {x: 0, y: 1.53, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7661199035671970000}
@@ -431,8 +436,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nm: {fileID: 0}
+  pm: {fileID: 0}
+  gm: {fileID: 0}
   ss: {fileID: 0}
   mobieltje: {fileID: 0}
+  Key1: {fileID: 0}
+  Key2: {fileID: 0}
+  Key3: {fileID: 0}
+  flash: {fileID: 0}
+  ks: {fileID: 0}
 --- !u!114 &7661199036875684133
 MonoBehaviour:
   m_ObjectHideFlags: 0
