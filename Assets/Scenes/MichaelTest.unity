@@ -5149,8 +5149,9 @@ GameObject:
   - component: {fileID: 1861531643}
   - component: {fileID: 1861531642}
   - component: {fileID: 1861531644}
+  - component: {fileID: 1861531645}
   m_Layer: 0
-  m_Name: Narrator
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5168,7 +5169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1861531642
 MonoBehaviour:
@@ -5190,12 +5191,13 @@ MonoBehaviour:
   NarrationMobieltjeVoorInteractie: {fileID: 8300000, guid: 6ddb5b6dab6cc5e4089da879fb7a48a0,
     type: 3}
   NarrationMobieltje: {fileID: 8300000, guid: cd4778d139da74d4a800236043986802, type: 3}
-  NarrationStudeerkamer: {fileID: 0}
-  DoorLocked: {fileID: 0}
-  WrongKey: {fileID: 0}
-  CorrectKey: {fileID: 0}
-  NarrationHuiskamer2: {fileID: 0}
-  Keuken: {fileID: 0}
+  NarrationStudeerkamer: {fileID: 8300000, guid: f6960c878f605d041ad0c23996702311,
+    type: 3}
+  DoorLocked: {fileID: 8300000, guid: 0a50edf65291b6c44bcc46b47456f871, type: 3}
+  WrongKey: {fileID: 8300000, guid: 295ad99e5af3567449708f481483e8fb, type: 3}
+  CorrectKey: {fileID: 8300000, guid: 3ee3bdbf7c06d9849be6424a614b97a7, type: 3}
+  NarrationHuiskamer2: {fileID: 8300000, guid: 432c8a50fc2f25744b7835e3665a050c, type: 3}
+  Keuken: {fileID: 8300000, guid: 5a691126c5a25ef43b5461e008201da5, type: 3}
   pm: {fileID: 0}
 --- !u!82 &1861531643
 AudioSource:
@@ -5307,6 +5309,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPrompt: {fileID: 2043061667}
   interactPrompt: {fileID: 1613183111}
+--- !u!114 &1861531645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861531640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed1737170112b14585cdc1a131b275f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bathroomDoor: {fileID: 1987085275}
+  bathroomDoorRotator: {fileID: 1070589099}
+  MainDoor: {fileID: 971688710}
+  MainDoorRotator: {fileID: 325785035}
+  clickedMainKey: 0
+  clickedBathroomKey: 0
+  clickedDoor: 0
 --- !u!1001 &1866733106
 PrefabInstance:
   m_ObjectHideFlags: 0
