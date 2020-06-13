@@ -71,7 +71,11 @@ public class Raycast : MonoBehaviour
 						break;
 					case ("MainDoor"):
 						{
-							if (GameManager.instance.clickedMainKey) GameManager.instance.clickedDoor = true;
+							if (GameManager.instance.clickedMainKey)
+							{
+								GameManager.instance.clickedDoor = true;
+								GameManager.instance.puzzle = 4;
+							}
 						}
 						break; 
 					case("BathroomDoor"):

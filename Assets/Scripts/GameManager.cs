@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		nm = GetComponent<NarrationManager>();
+		pm = GetComponent<PromptManager>();
+
         clickedDoor = false;
         clickedMainKey = false;
     }

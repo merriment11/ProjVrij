@@ -20,11 +20,11 @@ public class PromptManager : MonoBehaviour
 		{
 			case ("start"):
 				startPrompt.SetActive(true);
-				Activate("repeat", 3f);
+				StartCoroutine(Activate("repeat", 3f));
 				break;
 			case ("repeat"):
 				repeatPrompt.SetActive(true);
-				Activate("shoot", 3f);
+				StartCoroutine(Activate("shoot", 3f));
 				break;
 			case ("shoot"):
 				interactPrompt.SetActive(true);
@@ -42,7 +42,6 @@ public class PromptManager : MonoBehaviour
 
 	IEnumerator Activate(string input, float timer)
 	{
-
 		while (timer > 0)
 		{
 			yield return new WaitForSeconds(1);

@@ -16,6 +16,11 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
 	public AudioClip NarrationKeuken; //trigger zones need implementation
 
+	[SerializeField]
+	GameObject triggerzone1;
+	[SerializeField]
+	GameObject triggerzone2;
+
 	[HideInInspector]
 	public PromptManager pm;
 
@@ -45,7 +50,9 @@ public class NarrationManager : MonoBehaviour
 		switch (name)
 		{
 			case ("Start"):
-				{ Narration.clip = NarrationStart; }
+				{
+					Narration.clip = NarrationStart;
+				}
 				break;
 			case ("Kussen"):
 				{ Narration.clip = NarrationKussen; }
@@ -74,20 +81,25 @@ public class NarrationManager : MonoBehaviour
 				break;
 			case ("MainDoor"):
 				if (GameManager.instance.clickedMainKey)
-				{ Narration.clip = CorrectKey; }
+				{
+					Narration.clip = CorrectKey;
+					triggerzone1.SetActive(true);
+					triggerzone2.SetActive(true);
+				}
 				else if (GameManager.instance.clickedBathroomKey)
 				{ Narration.clip = WrongKey; }
 				else
 				{ Narration.clip = DoorLocked; }
 				break;
 
-			case ("TriggerzoneHuiskamer"): //triggerzone 1
+			case ("TriggerHuiskamer"): //triggerzone 1
 				if (GameManager.instance.puzzle == 1)
 				{ Narration.clip = NarrationHuiskamer; }
-				if (GameManager.instance.puzzle == 3)
+				if (GameManager.instance.puzzle == 4)
 				{ Narration.clip = NarrationHuiskamer2; }
 				break;
-			case ("TriggerzoneKeuken"): //triggerzone 1
+			case ("TriggerKeuken"): //triggerzone 2
+				if (GameManager.instance.puzzle == 4)
 				{ Narration.clip = NarrationKeuken; }
 				break;
 
