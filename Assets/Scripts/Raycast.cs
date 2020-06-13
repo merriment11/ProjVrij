@@ -45,10 +45,14 @@ public class Raycast : MonoBehaviour
 						{
 							ss.vision = 3;
 							//StartCoroutine(Activate(Key1, 10f)); was used previously, not anymore
-							StartCoroutine(Activate(Key2, 10f));
-							StartCoroutine(Activate(Key3, 10f));
 							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
 							flash.GetComponent<Image>().color = Color.clear;
+						}
+						break;
+					case ("Boekenkast"):
+						{
+							StartCoroutine(Activate(Key2, 10f));
+							StartCoroutine(Activate(Key3, 10f));
 						}
 						break;
 					case ("Key2"):
