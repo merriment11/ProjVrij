@@ -7243,6 +7243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad65f12992a7474c88726635256ea79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Narration: {fileID: 0}
   NarrationStart: {fileID: 8300000, guid: 5c8bdd994a1becf418002d3f4c1c2fbc, type: 3}
   NarrationHuiskamer: {fileID: 8300000, guid: a1d78dc78e260aa459c73711d0d96e95, type: 3}
   NarrationKussen: {fileID: 8300000, guid: ad3ad6dcd7f3292469bfb6c024722c23, type: 3}
@@ -7390,8 +7391,10 @@ MonoBehaviour:
   pm: {fileID: 0}
   playerObject: {fileID: 1138565993}
   bathroomDoor: {fileID: 1987085275}
+  bathroomDoorNeed: {fileID: 468253267}
   bathroomDoorRotator: {fileID: 1070589099}
   MainDoor: {fileID: 971688710}
+  MainDoorNeed: {fileID: 100771145}
   MainDoorRotator: {fileID: 325785035}
   clickedMainKey: 0
   clickedBathroomKey: 0

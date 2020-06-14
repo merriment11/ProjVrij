@@ -2,7 +2,7 @@
 
 public class NarrationManager : MonoBehaviour
 {
-	AudioSource Narration;
+	public AudioSource Narration;
 	public AudioClip NarrationStart;
 	public AudioClip NarrationHuiskamer; //trigger zones need implementation
 	public AudioClip NarrationKussen;
