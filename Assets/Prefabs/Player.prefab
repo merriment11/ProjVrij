@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7661199036443531261}
   m_Layer: 8
   m_Name: PlayerModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7661199036600438791}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 7661199036875684131}
   - component: {fileID: 7661199036875684132}
   - component: {fileID: 7661199036875684133}
-  - component: {fileID: 7661199036875684135}
+  - component: {fileID: 1941723181}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nm: {fileID: 0}
   pm: {fileID: 0}
-  gm: {fileID: 0}
+  ed: {fileID: 0}
   ss: {fileID: 0}
   mobieltje: {fileID: 0}
   Key1: {fileID: 0}
@@ -425,6 +425,8 @@ MonoBehaviour:
   Key3: {fileID: 0}
   flash: {fileID: 0}
   ks: {fileID: 0}
+  tv: {fileID: 0}
+  radio: {fileID: 0}
 --- !u!114 &7661199036875684133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 3401408147210189839, guid: 16093e5ecd709394aa86b67138dd6d61,
     type: 3}
---- !u!114 &7661199036875684135
+--- !u!114 &1941723181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -448,10 +450,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7661199036875684156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ff38d34a888764b8ea782ecdaf8600, type: 3}
+  m_Script: {fileID: 11500000, guid: 18fbc830bcd8a6f4ab9386412fb8ea55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PostProcessVolume: {fileID: 7661199036875684129}
+  PostProcessVolume: {fileID: 0}
 --- !u!1 &7661199037109316134
 GameObject:
   m_ObjectHideFlags: 0

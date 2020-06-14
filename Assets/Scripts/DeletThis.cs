@@ -12,5 +12,8 @@ public class DeletThis : MonoBehaviour
 
 		if (timer >= seconds)
 		{ Destroy(gameObject); }
+
+		if (Input.GetMouseButtonDown(1) && gameObject.name == "StartPrompt")
+		{ Destroy(gameObject); }
 	}
 }

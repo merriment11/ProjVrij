@@ -8,6 +8,7 @@ public class Raycast : MonoBehaviour
 
 	public NarrationManager nm;
 	public PromptManager pm;
+	public Eyedrop ed;
 
 	public SnapScript ss;
 	public GameObject mobieltje;
@@ -24,12 +25,13 @@ public class Raycast : MonoBehaviour
 	private void Start()
 	{
 		ss = GetComponentInChildren<SnapScript>();
+		ed = GetComponent<Eyedrop>();
 		nm.pm = pm;
 	}
 
 	void Update()
 	{
-		range = GetComponentInChildren<SnapScript>().size;
+		range = ss.size;
 
 		if (Input.GetButtonDown("Fire1"))
 		{
@@ -44,7 +46,7 @@ public class Raycast : MonoBehaviour
 							ss.vision = 2;
 							StartCoroutine(Activate(mobieltje, 14f));
 							GameManager.instance.puzzle = 2;
-							
+							ed.Blur();
 						}
 						break;
 					case ("Mobieltje"):
