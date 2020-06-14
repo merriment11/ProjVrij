@@ -12,6 +12,7 @@ public class Raycast : MonoBehaviour
 
 	public SnapScript ss;
 	public GameObject mobieltje;
+	public GameObject boekenkast;
 	public GameObject Key1;
 	public GameObject Key2;
 	public GameObject Key3;
@@ -55,11 +56,13 @@ public class Raycast : MonoBehaviour
 							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
 							flash.GetComponent<Image>().color = Color.clear;
 							ed.Blur();
+							GameManager.instance.puzzle = 3;
+							StartCoroutine(Activate(boekenkast, 14f));
 						}
 						break;
 					case ("Boekenkast"):
 						{
-							GameManager.instance.puzzle = 3;
+							GameManager.instance.puzzle = 4;
 							//StartCoroutine(Activate(Key1, 10f)); was used previously, not anymore
 							StartCoroutine(Activate(Key2, 10f));
 							StartCoroutine(Activate(Key3, 10f));
@@ -78,12 +81,13 @@ public class Raycast : MonoBehaviour
 							target.SetActive(false);
 						}
 						break;
+
 					case ("MainDoor"):
 						{
 							if (GameManager.instance.clickedMainKey)
 							{
 								GameManager.instance.clickedDoor = true;
-								GameManager.instance.puzzle = 4;
+								GameManager.instance.puzzle = 5;
 								ed.Blur();
 								tv.Stop();
 								radio.Stop();
@@ -107,9 +111,10 @@ public class Raycast : MonoBehaviour
 							//voice line: not the right door
 						}
 						break;
+
 					case ("TV"):
 						{	
-							if (GameManager.instance.puzzle == 3)
+							if (GameManager.instance.puzzle == 4)
 							{ radio.Play(); }
 							tv.Stop();
 						}

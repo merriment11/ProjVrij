@@ -95,11 +95,11 @@ public class NarrationManager : MonoBehaviour
 			case ("TriggerHuiskamer"): //triggerzone 1
 				if (GameManager.instance.puzzle == 1)
 				{ Narration.clip = NarrationHuiskamer; }
-				if (GameManager.instance.puzzle == 4)
+				if (GameManager.instance.puzzle == 5)
 				{ Narration.clip = NarrationHuiskamer2; }
 				break;
 			case ("TriggerKeuken"): //triggerzone 2
-				if (GameManager.instance.puzzle == 4)
+				if (GameManager.instance.puzzle == 5)
 				{ Narration.clip = NarrationKeuken; }
 				break;
 

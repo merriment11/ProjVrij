@@ -8,30 +8,31 @@ public class Eyedrop : MonoBehaviour
 	private PostProcessVolume PostProcessVolume;
 	DepthOfField depthOfField;
 
-	public float blur = 100f;
-	public float seconds = 3f;
+	public float blur = 0f;
+	public float seconds = 5f;
 
 	void Start()
     {
 		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
 	}
 
-	private void Update()
-	{
-		depthOfField.focalLength.value = blur;
-	}
-
 	IEnumerator dampenBlur()
     {
-		blur -= seconds;
-		yield return new WaitForSeconds(seconds/blur);
-
-		if (blur <= 0)
+		yield return new WaitForSeconds(2);
+		while (blur >= 0f)
 		{
-			StopCoroutine(dampenBlur());
+			if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
+			{
+				depthOfField.active = true;
+				depthOfField.focalLength.value = blur;
+			}
+			blur -= seconds;
+			yield return new WaitForSeconds(seconds / blur);
 		}
 
+		blur = 0f;
 		yield return null;
+		
 	}
 
 	public void Blur()

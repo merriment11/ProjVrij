@@ -22,14 +22,15 @@ public class BlurMechanic : MonoBehaviour
 
 	void Update()
 	{
-		if (PostProcessVolume.profile.TryGetSettings(out depthOfField) && ac != null && GameManager.instance.puzzle == 3)
+		if (PostProcessVolume.profile.TryGetSettings(out depthOfField) && ac != null && GameManager.instance.puzzle == 4 && ac.isPlaying)
 		{
 			depthOfField.active = true;
-			depthOfField.focalLength.value = Vector3.Distance(playerTransform.position, transform.position);
+			depthOfField.focalLength.value = amountOfBlur / Vector3.Distance(playerTransform.position, transform.position);
+			Debug.Log(depthOfField.focalLength.value);
 		}
 		else if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 		{
-			depthOfField.active = false;
+
 		}
 	}
 }
