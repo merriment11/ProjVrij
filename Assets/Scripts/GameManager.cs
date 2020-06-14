@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
 	public GameObject playerObject;
 
 	public GameObject bathroomDoor;
+	public GameObject bathroomDoorNeed;
     public GameObject bathroomDoorRotator;
     public GameObject MainDoor;
+    public GameObject MainDoorNeed;
     public GameObject MainDoorRotator;
     public bool clickedMainKey;
     public bool clickedBathroomKey;
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
 
 	//A count for what puzzle the player is at
 	public int puzzle = 1;
+
+    AudioSource ac;
 
 	internal static GameManager instance = null;	
 
@@ -39,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
 		nm = GetComponent<NarrationManager>();
 		pm = GetComponent<PromptManager>();
-
+        ac = nm.Narration;
         clickedDoor = false;
         clickedMainKey = false;
     }
@@ -68,6 +72,15 @@ public class GameManager : MonoBehaviour
                 clickedBathroomKey = false;
                 clickedDoor = false;
             }
+        }
+        Debug.Log(MainDoor.tag);
+        if (!ac.isPlaying && bathroomDoorNeed.tag == "Untagged")
+        {
+            bathroomDoorNeed.tag = "Clickable";
+        }
+        if (!ac.isPlaying && MainDoorNeed.tag == "Untagged")
+        {
+            MainDoorNeed.tag = "Clickable";
         }
     }
 }
