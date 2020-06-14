@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 	public NarrationManager nm;
 	public PromptManager pm;
 
+	public GameObject playerObject;
+
 	public GameObject bathroomDoor;
     public GameObject bathroomDoorRotator;
     public GameObject MainDoor;
@@ -29,9 +31,10 @@ public class GameManager : MonoBehaviour
 			Destroy(gameObject);
 			return;
 		}
+
+		playerObject = GameObject.Find("Player");
 	}
 
-	// Start is called before the first frame update
 	void Start()
     {
 		nm = GetComponent<NarrationManager>();

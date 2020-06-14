@@ -8,7 +8,12 @@ public class DisableDOF : MonoBehaviour
 	private PostProcessVolume PostProcessVolume;
 	DepthOfField depthOfField;
 
-    void Update()
+	private void Start()
+	{
+		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
+	}
+
+	void Update()
     {
 		if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 		{
@@ -16,12 +21,10 @@ public class DisableDOF : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Alpha8))
 			{
 				depthOfField.active = true;
-				Debug.Log("enabled");
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha9))
 			{
 				depthOfField.active = false;
-				Debug.Log("disabled");
 			}
 		}
 	}
