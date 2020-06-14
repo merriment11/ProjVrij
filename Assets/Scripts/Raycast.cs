@@ -60,6 +60,7 @@ public class Raycast : MonoBehaviour
 							//StartCoroutine(Activate(Key1, 10f)); was used previously, not anymore
 							StartCoroutine(Activate(Key2, 10f));
 							StartCoroutine(Activate(Key3, 10f));
+							tv.Play();
 						}
 						break;
 					case ("Key2"):
@@ -80,6 +81,8 @@ public class Raycast : MonoBehaviour
 							{
 								GameManager.instance.clickedDoor = true;
 								GameManager.instance.puzzle = 4;
+								tv.Stop();
+								radio.Stop();
 							}
 						}
 						break; 
@@ -91,17 +94,20 @@ public class Raycast : MonoBehaviour
 					case("BackDoor"):
 						{
 							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
+							//end of game
 						}
 						break;
 					case ("FrontDoor"):
 						{
 							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
+							//voice line: not the right door
 						}
 						break;
 					case ("TV"):
-						{
+						{	
+							if (GameManager.instance.puzzle == 3)
+							{ radio.Play(); }
 							tv.Stop();
-							radio.Play();
 						}
 						break;
 					case ("Radio"):
