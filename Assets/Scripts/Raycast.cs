@@ -17,6 +17,9 @@ public class Raycast : MonoBehaviour
 	public GameObject flash;
 	public KeyScript ks;
 
+	public AudioSource tv;
+	public AudioSource radio;
+
 
 	private void Start()
 	{
@@ -97,18 +100,14 @@ public class Raycast : MonoBehaviour
 						break;
 					case ("TV"):
 						{
-							GameObject tvAudio = GameObject.Find("TVAudio");
-							tvAudio.SetActive(false);
-							if (GameObject.Find("RadioAudio").activeSelf)
-                            {
-
-                            }
+							tv.Stop();
+							radio.Play();
 						}
 						break;
 					case ("Radio"):
 						{
-							GameObject radioAudio = GameObject.Find("RadioAudio");
-							radioAudio.SetActive(false);
+							radio.Stop();
+							tv.Play();
 						}
 						break;
 				}
