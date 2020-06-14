@@ -23,8 +23,8 @@ public class Eyedrop : MonoBehaviour
 
 	IEnumerator dampenBlur()
     {
-		blur -= seconds;
-		yield return new WaitForSeconds(seconds/blur);
+		blur -= blur/10;
+		yield return new WaitForSeconds(seconds/blur/seconds);
 
 		if (blur <= 0)
 		{

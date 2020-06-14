@@ -54,6 +54,7 @@ public class Raycast : MonoBehaviour
 							ss.vision = 3;
 							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
 							flash.GetComponent<Image>().color = Color.clear;
+							ed.Blur();
 						}
 						break;
 					case ("Boekenkast"):
@@ -83,6 +84,7 @@ public class Raycast : MonoBehaviour
 							{
 								GameManager.instance.clickedDoor = true;
 								GameManager.instance.puzzle = 4;
+								ed.Blur();
 								tv.Stop();
 								radio.Stop();
 							}
