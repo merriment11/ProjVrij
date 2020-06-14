@@ -16,8 +16,7 @@ public class SnapScript : MonoBehaviour
 	GameObject player;
 	public GameObject spherePrefab;
 
-	public AudioSource Right;
-	//bool canSee;
+	public AudioSource Right;	
 
 	private void Start()
 	{
@@ -36,7 +35,7 @@ public class SnapScript : MonoBehaviour
 
 		switch (vision) //levels of vision (for now, press your keyboard 1, 2 and 3 to change them)
 		{
-			case (0):
+			case (0): //only for menu
 				growSpeed = 200;
 				shrinkSpeed = 125;
 				minSize = 3.5f;
@@ -81,39 +80,7 @@ public class SnapScript : MonoBehaviour
 		}
 
 		size = transform.localScale.x; //so the raycast script can access it
-
-		//part of the old code
-		/*if (xSpeed >= .25f || -.25f >= xSpeed || zSpeed >= .25f || -.25f >= zSpeed)
-		{
-			canSee = false;
-		}*/
 	}
-
-	//old code with button needs to be kept pressed
-	/*void FixedUpdate()
-	{
-		if (Input.GetButton("Snap") && canSee)
-		{
-			if (transform.localScale.x < maxSize)
-			{
-				transform.localScale += new Vector3(growSpeed, growSpeed, growSpeed);
-			}
-			else if (transform.localScale.x >= maxSize)
-			{
-				transform.localScale = new Vector3(maxSize, maxSize, maxSize);
-			}
-		}
-		else if (transform.localScale.x >= 3.6)
-		{
-			float decreaseShrink = transform.localScale.x/4;
-			transform.localScale -= new Vector3(shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink, shrinkSpeed*decreaseShrink);
-		}
-
-		if (Input.GetButton("Snap") && canSee)
-		{
-			StartCoroutine("GrowCircle");
-		}
-    }*/
 
 	IEnumerator GrowCircle()
 	{

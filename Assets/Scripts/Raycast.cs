@@ -17,6 +17,7 @@ public class Raycast : MonoBehaviour
 	public GameObject flash;
 	public KeyScript ks;
 
+
 	private void Start()
 	{
 		ss = GetComponentInChildren<SnapScript>();
@@ -40,6 +41,7 @@ public class Raycast : MonoBehaviour
 							ss.vision = 2;
 							StartCoroutine(Activate(mobieltje, 14f));
 							GameManager.instance.puzzle = 2;
+							
 						}
 						break;
 					case ("Mobieltje"):
@@ -81,6 +83,32 @@ public class Raycast : MonoBehaviour
 					case("BathroomDoor"):
 						{
 							if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
+						}
+						break;
+					case("BackDoor"):
+						{
+							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
+						}
+						break;
+					case ("FrontDoor"):
+						{
+							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
+						}
+						break;
+					case ("TV"):
+						{
+							GameObject tvAudio = GameObject.Find("TVAudio");
+							tvAudio.SetActive(false);
+							if (GameObject.Find("RadioAudio").activeSelf)
+                            {
+
+                            }
+						}
+						break;
+					case ("Radio"):
+						{
+							GameObject radioAudio = GameObject.Find("RadioAudio");
+							radioAudio.SetActive(false);
 						}
 						break;
 				}
