@@ -140,13 +140,17 @@ public class Raycast : MonoBehaviour
 					mm.ChangeMaterialToDark(target);
 				}
 
-				if (target.GetComponentInChildren<AudioSource>() != null)
+				if (target.GetComponentInChildren<AudioSource>() != null && target.name != "TV" && target.name != "Radio")
 				{
 					target.GetComponentInChildren<AudioSource>().enabled = false;
 				}
 
 				nm.PlayNarration(target.name);
-				target.tag = "Untagged";
+
+				if (target.name != "TV" && target.name != "Radio")
+				{
+					target.tag = "Untagged";
+				}
 			}
 		}
 	}

@@ -4356,6 +4356,11 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 2800000, guid: 80b4452842f1bac46a85b9824a24c74c, type: 3}
+    - target: {fileID: -927199367670048503, guid: c3d88cd6fe4b33148982ebe5ab86752a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Clickable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d88cd6fe4b33148982ebe5ab86752a, type: 3}
 --- !u!1 &1180363956
@@ -5858,7 +5863,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: ff08b41fa4ccb8940a646ad09f2401fc,
         type: 3}
       propertyPath: m_TagString
-      value: Clickable
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff08b41fa4ccb8940a646ad09f2401fc, type: 3}
@@ -7250,7 +7255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nm: {fileID: 0}
   pm: {fileID: 0}
-  mm: {fileID: 0}
+  mm: {fileID: 1861531646}
   playerObject: {fileID: 1138565993}
   bathroomDoor: {fileID: 1987085275}
   bathroomDoorNeed: {fileID: 468253267}

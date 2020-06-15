@@ -26,11 +26,10 @@ public class BlurMechanic : MonoBehaviour
 		{
 			depthOfField.active = true;
 			depthOfField.focalLength.value = amountOfBlur / Vector3.Distance(playerTransform.position, transform.position);
-			Debug.Log(depthOfField.focalLength.value);
 		}
 		else if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 		{
-
+			
 		}
 	}
 }
