@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
 	public NarrationManager nm;
 	public PromptManager pm;
+	public MaterialManager mm;
 
 	public GameObject playerObject;
 
@@ -43,7 +44,9 @@ public class GameManager : MonoBehaviour
     {
 		nm = GetComponent<NarrationManager>();
 		pm = GetComponent<PromptManager>();
-        ac = nm.Narration;
+		mm = GetComponent<MaterialManager>();
+
+		ac = nm.Narration;
         clickedDoor = false;
         clickedMainKey = false;
     }

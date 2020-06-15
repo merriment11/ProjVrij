@@ -1487,6 +1487,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PostProcessVolume: {fileID: 0}
   amountOfBlur: 400
+--- !u!1 &365769067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c3d88cd6fe4b33148982ebe5ab86752a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1174602751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &365769068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365769067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.051467486, y: 0.271328, z: 0.019182678}
+  m_Center: {x: -0.0007480413, y: 0.030620713, z: -0.0006344081}
 --- !u!1 &394421079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1747,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
     - target: {fileID: -1279474218352909241, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_TagString
@@ -1748,7 +1767,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
     - target: {fileID: 8940632808050562651, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1923,7 +1942,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
     - target: {fileID: -1279474218352909241, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_TagString
@@ -1943,7 +1962,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
     - target: {fileID: 8940632808050562651, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4329,10 +4348,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.78000164
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: c3d88cd6fe4b33148982ebe5ab86752a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
     - target: {fileID: -927199367670048503, guid: c3d88cd6fe4b33148982ebe5ab86752a,
         type: 3}
       propertyPath: m_Name
-      value: gekreukeld_papiertje_v3
+      value: Kussen
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: c3d88cd6fe4b33148982ebe5ab86752a,
         type: 3}
@@ -5728,11 +5752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
+      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
     - target: {fileID: -927199367670048503, guid: ff08b41fa4ccb8940a646ad09f2401fc,
         type: 3}
       propertyPath: m_Name
-      value: Kussen
+      value: KussenMain
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: ff08b41fa4ccb8940a646ad09f2401fc,
         type: 3}
@@ -5747,25 +5771,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1510788655}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1510788657 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ff08b41fa4ccb8940a646ad09f2401fc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1510788655}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1510788658
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510788657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.015417479, y: 0.002290158, z: 0.014927672}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1552145499
 GameObject:
   m_ObjectHideFlags: 0
@@ -7052,6 +7057,7 @@ GameObject:
   - component: {fileID: 1861531642}
   - component: {fileID: 1861531644}
   - component: {fileID: 1861531645}
+  - component: {fileID: 1861531646}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -7231,6 +7237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nm: {fileID: 0}
   pm: {fileID: 0}
+  mm: {fileID: 0}
   playerObject: {fileID: 1138565993}
   bathroomDoor: {fileID: 1987085275}
   bathroomDoorNeed: {fileID: 468253267}
@@ -7242,6 +7249,20 @@ MonoBehaviour:
   clickedBathroomKey: 0
   clickedDoor: 0
   puzzle: 1
+--- !u!114 &1861531646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861531640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e661cdc7acd4d46a326518ea7c8f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dark: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
+  blue: {fileID: 2100000, guid: 8151221ee4396ea4c9ae4a9c502f3be6, type: 2}
 --- !u!1001 &1866733106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7702,6 +7723,11 @@ PrefabInstance:
       propertyPath: radio
       value: 
       objectReference: {fileID: 331897749}
+    - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 2100000, guid: 983c52e1e2bf37e478f9c9609feba7e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e77435cefbc626448c8f17c0d9ebc20, type: 3}
 --- !u!1001 &1974910203

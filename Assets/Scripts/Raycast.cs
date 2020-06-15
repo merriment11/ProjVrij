@@ -9,6 +9,7 @@ public class Raycast : MonoBehaviour
 	public NarrationManager nm;
 	public PromptManager pm;
 	public Eyedrop ed;
+	public MaterialManager mm;
 
 	public SnapScript ss;
 	public GameObject mobieltje;
@@ -16,18 +17,19 @@ public class Raycast : MonoBehaviour
 	public GameObject Key1;
 	public GameObject Key2;
 	public GameObject Key3;
+
 	public GameObject flash;
 	public KeyScript ks;
 
 	public AudioSource tv;
 	public AudioSource radio;
 
-
 	private void Start()
 	{
 		ss = GetComponentInChildren<SnapScript>();
 		ed = GetComponent<Eyedrop>();
-		nm.pm = pm;
+		mm = GameManager.instance.mm;
+		pm = nm.pm;
 	}
 
 	void Update()
@@ -73,12 +75,18 @@ public class Raycast : MonoBehaviour
 						{
 							GameManager.instance.clickedBathroomKey = true;
 							target.SetActive(false);
+							GameObject BathroomDoor = GameManager.instance.bathroomDoor;
+							mm.ChangeMaterialToBlue(BathroomDoor.transform.GetChild(1).gameObject);
+							mm.ChangeMaterialToBlue(BathroomDoor.transform.GetChild(2).gameObject);
 						}
 						break;
 					case ("Key3"):
 						{
 							GameManager.instance.clickedMainKey = true;
 							target.SetActive(false);
+							GameObject MainDoor = GameManager.instance.MainDoor;
+							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(1).gameObject);
+							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(2).gameObject);
 						}
 						break;
 
@@ -125,6 +133,11 @@ public class Raycast : MonoBehaviour
 							tv.Play();
 						}
 						break;
+				}
+
+				if (target.GetComponent<MeshRenderer>() != null)
+				{
+					mm.ChangeMaterialToDark(target);
 				}
 
 				if (target.GetComponentInChildren<AudioSource>() != null)
