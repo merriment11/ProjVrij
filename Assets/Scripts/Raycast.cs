@@ -57,7 +57,7 @@ public class Raycast : MonoBehaviour
 							flash.GetComponent<Image>().color = Color.clear;
 							ed.Blur();
 							GameManager.instance.puzzle = 3;
-							StartCoroutine(Activate(boekenkast, 14f));
+							StartCoroutine(Activate(boekenkast, 20f));
 						}
 						break;
 					case ("Boekenkast"):
@@ -163,7 +163,10 @@ public class Raycast : MonoBehaviour
 		if (timer  <= 0)
 		{
 			go.SetActive(true);
-			nm.PlayNarration(go.name + "VoorInteractie");
+			if (go.name == "Mobieltje")
+			{
+				nm.PlayNarration(go.name + "VoorInteractie");
+			}
 		}
 
 		yield return null;

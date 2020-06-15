@@ -47,6 +47,8 @@ public class NarrationManager : MonoBehaviour
 			Narration.Stop();
 		}
 
+		Debug.Log(name);
+
 		switch (name)
 		{
 			case ("Start"):

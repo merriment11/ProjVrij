@@ -94,36 +94,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &7661199036504723309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7661199036504723310}
-  m_Layer: 8
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7661199036504723310
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661199036504723309}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7661199036600438790}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7661199036600438789
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +124,6 @@ Transform:
   m_LocalScale: {x: 1.4934, y: 1.4934, z: 1.4934}
   m_Children:
   - {fileID: 7661199036443531260}
-  - {fileID: 7661199036504723310}
   - {fileID: 7661199036875684159}
   - {fileID: 7661199037109316135}
   m_Father: {fileID: 0}
@@ -193,7 +162,7 @@ MonoBehaviour:
   player: {fileID: 7661199036600438792}
   speed: 8
   gravity: -30
-  groundCheck: {fileID: 7661199036504723310}
+  groundCheck: {fileID: 0}
   groundDistance: 0.05
   groundMask:
     serializedVersion: 2
@@ -238,7 +207,7 @@ Transform:
   m_Children:
   - {fileID: 7661199035671970000}
   m_Father: {fileID: 7661199036600438790}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7661199036875684158
 Camera:
@@ -420,6 +389,7 @@ MonoBehaviour:
   ed: {fileID: 0}
   ss: {fileID: 0}
   mobieltje: {fileID: 0}
+  boekenkast: {fileID: 0}
   Key1: {fileID: 0}
   Key2: {fileID: 0}
   Key3: {fileID: 0}
@@ -454,6 +424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PostProcessVolume: {fileID: 0}
+  blur: 0
+  seconds: 5
 --- !u!1 &7661199037109316134
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661199036600438790}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7661199037109316136
 AudioSource:

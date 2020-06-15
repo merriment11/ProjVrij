@@ -9,7 +9,7 @@ public class Eyedrop : MonoBehaviour
 	DepthOfField depthOfField;
 
 	public float blur = 0f;
-	public float seconds = 5f;
+	public float seconds = 4f;
 
 	void Start()
     {
@@ -18,7 +18,7 @@ public class Eyedrop : MonoBehaviour
 
 	IEnumerator dampenBlur()
     {
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(3.5f);
 		while (blur >= 0f)
 		{
 			if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
@@ -37,7 +37,7 @@ public class Eyedrop : MonoBehaviour
 
 	public void Blur()
 	{
-		blur = 100f;
+		blur = 150f;
 		StartCoroutine(dampenBlur());
 	}
 }

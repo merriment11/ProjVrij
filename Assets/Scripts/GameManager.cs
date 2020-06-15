@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
                 clickedDoor = false;
             }
         }
-        Debug.Log(MainDoor.tag);
+
         if (!ac.isPlaying && bathroomDoorNeed.tag == "Untagged")
         {
             bathroomDoorNeed.tag = "Clickable";
