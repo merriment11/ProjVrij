@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
+
 
 public class MobileSphere : MonoBehaviour
 {
@@ -8,13 +10,35 @@ public class MobileSphere : MonoBehaviour
 	[SerializeField]
 	private GameObject flash;
 	private FlashFade flashfade;
+	private BlurMechanic bm;
+	[SerializeField]
+	private PostProcessVolume PostProcessVolume;
+	DepthOfField depthOfField;
+	public float amountOfBlur = 400f;
 
-	void Update()
+    private void Start()
+    {
+		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
+	}
+
+    void Update()
     {
 		if (growing == false)
 		{
 			StartCoroutine("GrowSphere");
 			growing = true;
+		}
+		if (transform.parent.GetComponentInChildren<AudioSource>().isPlaying)
+        {
+			if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
+			{
+				depthOfField.active = true;
+				depthOfField.focalLength.value = amountOfBlur;
+			}
+		}
+		else
+        {
+			depthOfField.focalLength.value = 0;
 		}
 	}
 
@@ -29,17 +53,11 @@ public class MobileSphere : MonoBehaviour
 
 	IEnumerator GrowSphere()
 	{
-		transform.localScale = new Vector3(.1f, .1f, .1f);
 		yield return new WaitForSeconds(2f);
 
 		transform.parent.GetComponentInChildren<AudioSource>().Play();
+		yield return new WaitForSeconds(2f);
 
-		for (float i = 0; i < 2; i += Time.deltaTime)
-		{
-			yield return null;
-			transform.localScale = new Vector3(1 + i*i*20, 1 + i*i*20, 1 + i*i*20);
-		}
-		
 		growing = false;
 		yield return null;
 	}

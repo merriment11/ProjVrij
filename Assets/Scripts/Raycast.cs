@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Raycast : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Raycast : MonoBehaviour
 	public PromptManager pm;
 	public Eyedrop ed;
 	public MaterialManager mm;
+	private PostProcessVolume PostProcessVolume;
+	DepthOfField depthOfField;
 
 	public SnapScript ss;
 	public GameObject mobieltje;
@@ -30,6 +33,8 @@ public class Raycast : MonoBehaviour
 		ed = GetComponent<Eyedrop>();
 		mm = GameManager.instance.mm;
 		pm = nm.pm;
+		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
+
 	}
 
 	void Update()
@@ -59,9 +64,17 @@ public class Raycast : MonoBehaviour
 							flash.GetComponent<Image>().color = Color.clear;
 							ed.Blur();
 							GameManager.instance.puzzle = 3;
+							target.SetActive(false);
 							StartCoroutine(Activate(boekenkast, 20f));
+<<<<<<< HEAD
 							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(1).gameObject);
 							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(2).gameObject);
+=======
+							if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
+							{
+								depthOfField.focalLength.value = 0;
+							}
+>>>>>>> 8a92e02c993584dee01c1f269b35b50b32de076a
 						}
 						break;
 					case ("Boekenkast"):
