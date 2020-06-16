@@ -1391,8 +1391,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.5
-  MaxDistance: 13
+  MinDistance: 2.1850471
+  MaxDistance: 15.148107
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -2182,8 +2182,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 12.26339
+  MinDistance: 2.667655
+  MaxDistance: 15.156913
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -3457,7 +3457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905790111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 249367222}
@@ -3484,7 +3484,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0.44
   MinDistance: 2.991291
-  MaxDistance: 16.18352
+  MaxDistance: 12.020239
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -7136,21 +7136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Narration: {fileID: 0}
-  NarrationStart: {fileID: 8300000, guid: 5c8bdd994a1becf418002d3f4c1c2fbc, type: 3}
-  NarrationHuiskamer: {fileID: 8300000, guid: a1d78dc78e260aa459c73711d0d96e95, type: 3}
-  NarrationKussen: {fileID: 8300000, guid: ad3ad6dcd7f3292469bfb6c024722c23, type: 3}
-  NarrationHuistelefoon: {fileID: 8300000, guid: afa2953d788422a44a9a2ec4b1b85e88,
+  NarrationStart: {fileID: 8300000, guid: c3ef00c3322c61645b2264499ca194ce, type: 3}
+  NarrationHuiskamer: {fileID: 8300000, guid: 475dc88fbbb26a24dbf52d31dc1564de, type: 3}
+  NarrationKussen: {fileID: 8300000, guid: 3350a4a28cdf47c49b7578e5fdabfa8c, type: 3}
+  NarrationHuistelefoon: {fileID: 8300000, guid: 46d1dc0e975b64e48b5c75b732314442,
     type: 3}
-  NarrationMobieltjeVoorInteractie: {fileID: 8300000, guid: 6ddb5b6dab6cc5e4089da879fb7a48a0,
+  NarrationMobieltjeVoorInteractie: {fileID: 8300000, guid: 69e69359893a404499ab5568bca2b329,
     type: 3}
-  NarrationMobieltje: {fileID: 8300000, guid: cd4778d139da74d4a800236043986802, type: 3}
-  NarrationStudeerkamer: {fileID: 8300000, guid: f6960c878f605d041ad0c23996702311,
+  NarrationMobieltje: {fileID: 8300000, guid: 0a8a3b21b0766d74f84c94f7799f28b7, type: 3}
+  NarrationStudeerkamer: {fileID: 8300000, guid: bd7670c6dc94b7e419aafc57d942811d,
     type: 3}
-  DoorLocked: {fileID: 8300000, guid: 0a50edf65291b6c44bcc46b47456f871, type: 3}
-  WrongKey: {fileID: 8300000, guid: 295ad99e5af3567449708f481483e8fb, type: 3}
-  CorrectKey: {fileID: 8300000, guid: 3ee3bdbf7c06d9849be6424a614b97a7, type: 3}
-  NarrationHuiskamer2: {fileID: 8300000, guid: 432c8a50fc2f25744b7835e3665a050c, type: 3}
-  NarrationKeuken: {fileID: 8300000, guid: 5a691126c5a25ef43b5461e008201da5, type: 3}
+  DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
+  WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}
+  CorrectKey: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
+  NarrationHuiskamer2: {fileID: 8300000, guid: e021f6bf97027554abc8546bca1bc864, type: 3}
+  NarrationKeuken: {fileID: 8300000, guid: 3c98c6dae7b2d49489850a576fc88edf, type: 3}
   triggerzone1: {fileID: 1704517386}
   triggerzone2: {fileID: 169679651}
   pm: {fileID: 0}
@@ -7166,13 +7166,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 49
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7792,6 +7792,16 @@ PrefabInstance:
       propertyPath: ss
       value: 
       objectReference: {fileID: 1614153841}
+    - target: {fileID: 7661199037109316135, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.082
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661199037109316136, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: Priority
+      value: 195
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e77435cefbc626448c8f17c0d9ebc20, type: 3}
 --- !u!1001 &1974910203
