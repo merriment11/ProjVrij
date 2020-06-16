@@ -38,6 +38,7 @@ public class MobileSphere : MonoBehaviour
 			}
 			else
 			{
+				Debug.Log("putting blur to 0 in mobieltje");
 				depthOfField.focalLength.value = 0;
 			}
 		}
