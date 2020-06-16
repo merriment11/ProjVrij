@@ -3,16 +3,20 @@
 public class NarrationManager : MonoBehaviour
 {
 	public AudioSource Narration;
+	public AudioSource NarrationRight;
+	public AudioSource NarrationFrontDoor;
 	public AudioClip NarrationStart;
 	public AudioClip NarrationHuiskamer; //trigger zones need implementation
 	public AudioClip NarrationKussen;
 	public AudioClip NarrationHuistelefoon;
 	public AudioClip NarrationMobieltjeVoorInteractie;
 	public AudioClip NarrationMobieltje;
+	public AudioClip NarrationMobieltjeRight;
 	public AudioClip NarrationStudeerkamer; //trigger zones need implementation
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
+	public AudioClip CorrectKeyPolice;
 	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
 	public AudioClip NarrationKeuken; //trigger zones need implementation
 
@@ -70,7 +74,11 @@ public class NarrationManager : MonoBehaviour
 				}
 				break;
 			case ("Mobieltje"):
-				{ Narration.clip = NarrationMobieltje; }
+				{ 
+					Narration.clip = NarrationMobieltje;
+					NarrationRight.clip = NarrationMobieltjeRight;
+					NarrationRight.Play();
+				}
 				break;
 			case ("Boekenkast"):
 				{ Narration.clip = NarrationStudeerkamer; }
@@ -84,7 +92,10 @@ public class NarrationManager : MonoBehaviour
 			case ("MainDoor"):
 				if (GameManager.instance.clickedMainKey)
 				{
+					NarrationFrontDoor.clip = CorrectKeyPolice;
 					Narration.clip = CorrectKey;
+					NarrationFrontDoor.Play();
+
 					triggerzone1.SetActive(true);
 					triggerzone2.SetActive(true);
 				}
