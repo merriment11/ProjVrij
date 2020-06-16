@@ -66,15 +66,14 @@ public class Raycast : MonoBehaviour
 							GameManager.instance.puzzle = 3;
 							target.SetActive(false);
 							StartCoroutine(Activate(boekenkast, 20f));
-<<<<<<< HEAD
+
 							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(1).gameObject);
 							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(2).gameObject);
-=======
+
 							if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 							{
 								depthOfField.focalLength.value = 0;
 							}
->>>>>>> 8a92e02c993584dee01c1f269b35b50b32de076a
 						}
 						break;
 					case ("Boekenkast"):
