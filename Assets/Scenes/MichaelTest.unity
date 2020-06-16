@@ -7791,7 +7791,10 @@ MonoBehaviour:
     type: 3}
   NarrationMobieltje: {fileID: 8300000, guid: 93e4ecae44a1f04448718d4e6c71f2e8, type: 3}
   NarrationMobieltjeRight: {fileID: 0}
+  NarrationMobieltjeEinde: {fileID: 0}
   NarrationStudeerkamer: {fileID: 8300000, guid: bd7670c6dc94b7e419aafc57d942811d,
+    type: 3}
+  NarrationStudeerkamerEinde: {fileID: 8300000, guid: 851968142503bd94298de2aa16f09188,
     type: 3}
   DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
   WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}

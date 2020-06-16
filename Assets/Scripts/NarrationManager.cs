@@ -13,7 +13,9 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip NarrationMobieltjeVoorInteractie;
 	public AudioClip NarrationMobieltje;
 	public AudioClip NarrationMobieltjeRight;
+	public AudioClip NarrationMobieltjeEinde;
 	public AudioClip NarrationStudeerkamer;
+	public AudioClip NarrationStudeerkamerEinde;
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
@@ -41,8 +43,8 @@ public class NarrationManager : MonoBehaviour
 		Voicelines[0] = null;
 		Voicelines[1] = NarrationKussen;
 		Voicelines[2] = NarrationMobieltjeVoorInteractie;
-		Voicelines[3] = null;
-		Voicelines[4] = NarrationStudeerkamer;
+		Voicelines[3] = NarrationMobieltjeEinde;
+		Voicelines[4] = NarrationStudeerkamerEinde;
 	}
 
 	private void Update()
