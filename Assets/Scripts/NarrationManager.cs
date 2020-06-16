@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class NarrationManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
 	public AudioClip NarrationKeuken; //trigger zones need implementation
 
+	public Dictionary <int,AudioClip> Voicelines;
+	int ImportantNarration = 0;
+
 	[SerializeField]
 	GameObject triggerzone1;
 	[SerializeField]
@@ -29,13 +33,20 @@ public class NarrationManager : MonoBehaviour
 		pm = GetComponent<PromptManager>();
 		Narration = GetComponent<AudioSource>();
 		PlayNarration("Start");
-    }
+
+		Voicelines[0] = null;
+		Voicelines[1] = NarrationKussen;
+		Voicelines[2] = NarrationMobieltjeVoorInteractie;
+		Voicelines[3] = null;
+		Voicelines[4] = NarrationStudeerkamer;
+	}
 
 	private void Update()
 	{
 		if (Input.GetButtonDown("Repeat"))
 		{
 			Narration.Stop();
+			Narration.clip = (Voicelines[ImportantNarration]);
 			Narration.Play();
 		}
 	}
@@ -52,13 +63,14 @@ public class NarrationManager : MonoBehaviour
 		switch (name)
 		{
 			case ("Start"):
-				{
-					Narration.clip = NarrationStart;
-				}
+				{ Narration.clip = NarrationStart; }
 				break;
 			case ("Kussen"):
-				{ Narration.clip = NarrationKussen; }
-				pm.PlayPrompt("static");
+				{
+					Narration.clip = NarrationKussen;
+					pm.PlayPrompt("static");
+					ImportantNarration = 1;
+				}
 				break;
 			case ("Huistelefoon"):
 				{ Narration.clip = NarrationHuistelefoon; }
@@ -67,13 +79,20 @@ public class NarrationManager : MonoBehaviour
 				{
 					Narration.clip = NarrationMobieltjeVoorInteractie;
 					pm.PlayPrompt("mobiel");
+					ImportantNarration = 2;
 				}
 				break;
 			case ("Mobieltje"):
-				{ Narration.clip = NarrationMobieltje; }
+				{
+					Narration.clip = NarrationMobieltje;
+					ImportantNarration = 3;
+				}
 				break;
 			case ("Boekenkast"):
-				{ Narration.clip = NarrationStudeerkamer; }
+				{
+					Narration.clip = NarrationStudeerkamer;
+					ImportantNarration = 4;
+				}
 				break;
 			case ("BathroomDoor"):
 				if (GameManager.instance.clickedBathroomKey)
