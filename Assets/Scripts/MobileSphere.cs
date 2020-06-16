@@ -1,64 +1,56 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
 
 
 public class MobileSphere : MonoBehaviour
 {
-	bool growing = false;
-	[SerializeField]
-	private GameObject flash;
-	private FlashFade flashfade;
+	bool playing = false;
 	private BlurMechanic bm;
 	[SerializeField]
 	private PostProcessVolume PostProcessVolume;
 	DepthOfField depthOfField;
 	public float amountOfBlur = 400f;
+	AudioSource mobieltjeAudio;
 
     private void Start()
     {
 		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
+		mobieltjeAudio = transform.parent.GetComponentInChildren<AudioSource>();
 	}
 
     void Update()
     {
-		if (growing == false)
+		if (mobieltjeAudio != null)
 		{
-			StartCoroutine("GrowSphere");
-			growing = true;
-		}
-		if (transform.parent.GetComponentInChildren<AudioSource>().isPlaying)
-        {
-			if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
+			if (playing == false)
 			{
-				depthOfField.active = true;
-				depthOfField.focalLength.value = amountOfBlur;
+				StartCoroutine("PlayAudio");
+				playing = true;
+			}
+			if (mobieltjeAudio.isPlaying)
+			{
+				if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
+				{
+					depthOfField.active = true;
+					depthOfField.focalLength.value = amountOfBlur;
+				}
+			}
+			else
+			{
+				depthOfField.focalLength.value = 0;
 			}
 		}
-		else
-        {
-			depthOfField.focalLength.value = 0;
-		}
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.transform.name == "PlayerModel")
-		{
-			flashfade = flash.GetComponent<FlashFade>();
-			StartCoroutine(flashfade.FadeToClear(flash.GetComponent<Image>(), 2));
-		}
-	}
-
-	IEnumerator GrowSphere()
+	IEnumerator PlayAudio()
 	{
 		yield return new WaitForSeconds(2f);
 
-		transform.parent.GetComponentInChildren<AudioSource>().Play();
+		mobieltjeAudio.Play();
 		yield return new WaitForSeconds(2f);
 
-		growing = false;
+		playing = false;
 		yield return null;
 	}
 }

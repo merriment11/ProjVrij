@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 	public NarrationManager nm;
 	public PromptManager pm;
 	public MaterialManager mm;
+	public SceneManager sm;
 
 	public GameObject playerObject;
 
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
 		nm = GetComponent<NarrationManager>();
 		pm = GetComponent<PromptManager>();
 		mm = GetComponent<MaterialManager>();
+		sm = GetComponent<SceneManager>();
 
 		ac = nm.Narration;
         clickedDoor = false;

@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
     public void StartButton()
     {
-        Debug.LogError("woooow");
         UnityEngine.SceneManagement.SceneManager.LoadScene("MichaelTest");
     }
 
@@ -15,4 +11,10 @@ public class SceneManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+	public void EndGame()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+		Cursor.lockState = CursorLockMode.None;
+	}
 }

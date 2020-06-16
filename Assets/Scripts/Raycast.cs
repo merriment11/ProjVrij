@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -15,17 +14,21 @@ public class Raycast : MonoBehaviour
 	DepthOfField depthOfField;
 
 	public SnapScript ss;
+	public KeyScript ks;
+
+	public GameObject huistelefoon;
 	public GameObject mobieltje;
 	public GameObject boekenkast;
-	public GameObject Key1;
+
+	//public GameObject Key1; unused
 	public GameObject Key2;
 	public GameObject Key3;
 
-	public GameObject flash;
-	public KeyScript ks;
+	public GameObject Radio;
+	public GameObject TV;
 
-	public AudioSource tv;
-	public AudioSource radio;
+	AudioSource tv;
+	AudioSource radio;
 
 	private void Start()
 	{
@@ -33,8 +36,11 @@ public class Raycast : MonoBehaviour
 		ed = GetComponent<Eyedrop>();
 		mm = GameManager.instance.mm;
 		pm = nm.pm;
+
 		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
 
+		tv = TV.GetComponentInChildren<AudioSource>();
+		radio = Radio.GetComponentInChildren<AudioSource>();
 	}
 
 	void Update()
@@ -49,26 +55,35 @@ public class Raycast : MonoBehaviour
 				Debug.Log(target);
 				switch (target.name)
 				{
+					case ("Kussen"):
+						{
+							mm.ChangeMaterialToDark(target);
+							StartCoroutine(Activate(huistelefoon, 18f));
+						}
+						break;
 					case ("Huistelefoon"):
 						{
 							ss.vision = 2;
 							StartCoroutine(Activate(mobieltje, 14f));
 							GameManager.instance.puzzle = 2;
 							ed.Blur();
+
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
 						}
 						break;
 					case ("Mobieltje"):
 						{
 							ss.vision = 3;
 							mobieltje.transform.GetChild(1).gameObject.SetActive(false);
-							flash.GetComponent<Image>().color = Color.clear;
 							ed.Blur();
 							GameManager.instance.puzzle = 3;
 
 							StartCoroutine(Activate(boekenkast, 20f));
 
-							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(2).GetChild(0).gameObject);
-							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(2).GetChild(1).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
 
 							if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 							{
@@ -83,12 +98,20 @@ public class Raycast : MonoBehaviour
 							StartCoroutine(Activate(Key2, 10f));
 							StartCoroutine(Activate(Key3, 10f));
 							tv.Play();
+
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+
+							mm.ChangeMaterialToBlue(TV.transform.GetChild(0).GetChild(0).gameObject);
+							mm.ChangeMaterialToBlue(TV.transform.GetChild(0).GetChild(1).gameObject);
+							mm.ChangeMaterialToBlue(TV.transform.GetChild(0).GetChild(2).gameObject);
 						}
 						break;
 					case ("Key2"):
 						{
 							GameManager.instance.clickedBathroomKey = true;
 							target.SetActive(false);
+
 							GameObject BathroomDoor = GameManager.instance.bathroomDoor;
 							mm.ChangeMaterialToBlue(BathroomDoor.transform.GetChild(1).gameObject);
 							mm.ChangeMaterialToBlue(BathroomDoor.transform.GetChild(2).gameObject);
@@ -98,15 +121,28 @@ public class Raycast : MonoBehaviour
 						{
 							GameManager.instance.clickedMainKey = true;
 							target.SetActive(false);
+
 							GameObject MainDoor = GameManager.instance.MainDoor;
 							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(1).gameObject);
 							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(2).gameObject);
+						}
+						break;
+					case ("BathroomDoor"):
+						{
+							if (GameManager.instance.clickedBathroomKey)
+							{
+								GameManager.instance.clickedDoor = true;
+								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
+							}
 						}
 						break;
 					case ("MainDoor"):
 						{
 							if (GameManager.instance.clickedMainKey)
 							{
+								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
 								GameManager.instance.clickedDoor = true;
 								GameManager.instance.puzzle = 5;
 								ed.Blur();
@@ -115,15 +151,11 @@ public class Raycast : MonoBehaviour
 							}
 						}
 						break; 
-					case("BathroomDoor"):
-						{
-							if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
-						}
-						break;
+					
 					case("BackDoor"):
 						{
 							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
-							//end of game
+							GameManager.instance.sm.EndGame();
 						}
 						break;
 					case ("FrontDoor"):
@@ -136,21 +168,34 @@ public class Raycast : MonoBehaviour
 					case ("TV"):
 						{	
 							if (GameManager.instance.puzzle == 4)
-							{ radio.Play(); }
-							tv.Stop();
+							{
+								radio.Play();
+								tv.Stop();
+
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
+
+								mm.ChangeMaterialToBlue(Radio.transform.GetChild(0).GetChild(0).gameObject);
+								mm.ChangeMaterialToBlue(Radio.transform.GetChild(0).GetChild(1).gameObject);
+								mm.ChangeMaterialToBlue(Radio.transform.GetChild(0).GetChild(2).gameObject);
+							}
 						}
 						break;
 					case ("Radio"):
 						{
 							radio.Stop();
 							tv.Play();
+
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
+
+							mm.ChangeMaterialToBlue(TV.transform.GetChild(0).GetChild(0).gameObject);
+							mm.ChangeMaterialToBlue(TV.transform.GetChild(0).GetChild(1).gameObject);
+							mm.ChangeMaterialToBlue(TV.transform.GetChild(0).GetChild(2).gameObject);
 						}
 						break;
-				}
-
-				if (target.GetComponent<MeshRenderer>() != null)
-				{
-					mm.ChangeMaterialToDark(target);
 				}
 
 				if (target.GetComponentInChildren<AudioSource>() != null && target.name != "TV" && target.name != "Radio")
