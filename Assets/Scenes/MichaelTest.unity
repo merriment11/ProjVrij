@@ -7550,7 +7550,7 @@ MonoBehaviour:
   NarrationMobieltjeVoorInteractie: {fileID: 8300000, guid: 69e69359893a404499ab5568bca2b329,
     type: 3}
   NarrationMobieltje: {fileID: 8300000, guid: 93e4ecae44a1f04448718d4e6c71f2e8, type: 3}
-  NarrationMobieltjeRight: {fileID: 8300000, guid: 3de9f98d115df2344a78c3d939900e51,
+  NarrationMobieltjeRight: {fileID: 8300000, guid: 0250e3ff630dd3e439195491911cb9e4,
     type: 3}
   NarrationMobieltjeEinde: {fileID: 8300000, guid: 4872f930c5793c745b7da6393a6f6d03,
     type: 3}

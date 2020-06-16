@@ -84,6 +84,11 @@ public class Raycast : MonoBehaviour
 
 							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
 							mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+
+							if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
+							{
+								depthOfField.focalLength.value = 0;
+							}
 						}
 						break;
 					case ("Boekenkast"):

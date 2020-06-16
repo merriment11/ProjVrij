@@ -11,6 +11,7 @@ public class MobileSphere : MonoBehaviour
 	private PostProcessVolume PostProcessVolume;
 	DepthOfField depthOfField;
 	public float amountOfBlur = 400f;
+
 	AudioSource mobieltjeAudio;
 
     private void Start()
@@ -37,8 +38,9 @@ public class MobileSphere : MonoBehaviour
 					depthOfField.focalLength.value = amountOfBlur;
 				}
 			}
-			else
+			else if (mobieltjeAudio.isActiveAndEnabled)
 			{
+				Debug.Log("problem?");
 				depthOfField.focalLength.value = 0;
 			}
 		}

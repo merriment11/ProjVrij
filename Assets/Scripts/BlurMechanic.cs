@@ -22,7 +22,6 @@ public class BlurMechanic : MonoBehaviour
 
 	void Update()
 	{
-		Debug.Log(gameObject.name);
 		if (PostProcessVolume.profile.TryGetSettings(out depthOfField) && ac != null && GameManager.instance.puzzle == 4 && ac.isPlaying)
 		{
 			depthOfField.active = true;
