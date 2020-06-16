@@ -60,6 +60,8 @@ public class Raycast : MonoBehaviour
 							ed.Blur();
 							GameManager.instance.puzzle = 3;
 							StartCoroutine(Activate(boekenkast, 20f));
+							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(1).gameObject);
+							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(2).gameObject);
 						}
 						break;
 					case ("Boekenkast"):
