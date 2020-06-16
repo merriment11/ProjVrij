@@ -8155,6 +8155,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7661199036875684128, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: sensitivity
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661199036875684128, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: smoothing
+      value: 3.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: nm
