@@ -383,7 +383,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: fea171776556b734c9ac963817ed540d,
         type: 3}
@@ -7780,8 +7780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Narration: {fileID: 1861531643}
-  NarrationRight: {fileID: 1447148317}
-  NarrationFrontDoor: {fileID: 134673758}
+  NarrationRight: {fileID: 0}
+  NarrationFrontDoor: {fileID: 0}
   NarrationStart: {fileID: 8300000, guid: c3ef00c3322c61645b2264499ca194ce, type: 3}
   NarrationHuiskamer: {fileID: 8300000, guid: 475dc88fbbb26a24dbf52d31dc1564de, type: 3}
   NarrationKussen: {fileID: 8300000, guid: 3350a4a28cdf47c49b7578e5fdabfa8c, type: 3}
@@ -7790,14 +7790,13 @@ MonoBehaviour:
   NarrationMobieltjeVoorInteractie: {fileID: 8300000, guid: 69e69359893a404499ab5568bca2b329,
     type: 3}
   NarrationMobieltje: {fileID: 8300000, guid: 93e4ecae44a1f04448718d4e6c71f2e8, type: 3}
-  NarrationMobieltjeRight: {fileID: 8300000, guid: 3de9f98d115df2344a78c3d939900e51,
-    type: 3}
+  NarrationMobieltjeRight: {fileID: 0}
   NarrationStudeerkamer: {fileID: 8300000, guid: bd7670c6dc94b7e419aafc57d942811d,
     type: 3}
   DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
   WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}
   CorrectKey: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
-  CorrectKeyPolice: {fileID: 8300000, guid: 4c67466688a440b4581a8ef23d19ca27, type: 3}
+  CorrectKeyPolice: {fileID: 0}
   NarrationHuiskamer2: {fileID: 8300000, guid: e021f6bf97027554abc8546bca1bc864, type: 3}
   NarrationKeuken: {fileID: 8300000, guid: 3c98c6dae7b2d49489850a576fc88edf, type: 3}
   triggerzone1: {fileID: 1704517386}

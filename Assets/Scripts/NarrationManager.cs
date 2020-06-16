@@ -7,19 +7,19 @@ public class NarrationManager : MonoBehaviour
 	public AudioSource NarrationRight;
 	public AudioSource NarrationFrontDoor;
 	public AudioClip NarrationStart;
-	public AudioClip NarrationHuiskamer; //trigger zones need implementation
+	public AudioClip NarrationHuiskamer;
 	public AudioClip NarrationKussen;
 	public AudioClip NarrationHuistelefoon;
 	public AudioClip NarrationMobieltjeVoorInteractie;
 	public AudioClip NarrationMobieltje;
 	public AudioClip NarrationMobieltjeRight;
-	public AudioClip NarrationStudeerkamer; //trigger zones need implementation
+	public AudioClip NarrationStudeerkamer;
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
 	public AudioClip CorrectKeyPolice;
-	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
-	public AudioClip NarrationKeuken; //trigger zones need implementation
+	public AudioClip NarrationHuiskamer2;
+	public AudioClip NarrationKeuken;
 
 	public Dictionary <int,AudioClip> Voicelines;
 	int ImportantNarration = 0;
@@ -87,16 +87,10 @@ public class NarrationManager : MonoBehaviour
 				}
 				break;
 			case ("Mobieltje"):
-<<<<<<< HEAD
 				{
-					Narration.clip = NarrationMobieltje;
-					ImportantNarration = 3;
-=======
-				{ 
-					Narration.clip = NarrationMobieltje;
 					NarrationRight.clip = NarrationMobieltjeRight;
 					NarrationRight.Play();
->>>>>>> 5da8c0bfb38038e8570d2783b8c525fdf57b83a2
+					ImportantNarration = 3;
 				}
 				break;
 			case ("Boekenkast"):
