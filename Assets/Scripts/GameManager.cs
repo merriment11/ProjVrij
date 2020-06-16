@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     public bool clickedMainKey;
     public bool clickedBathroomKey;
     public bool clickedDoor;
+    public bool checkIfPlayed;
+    public bool checkIfPlayed2;
 
 	//A count for what puzzle the player is at
 	public int puzzle = 1;
@@ -49,14 +52,24 @@ public class GameManager : MonoBehaviour
 		ac = nm.Narration;
         clickedDoor = false;
         clickedMainKey = false;
+        checkIfPlayed = false;
+        checkIfPlayed2 = false;
     }
 
     void Update()
     {
         if (clickedMainKey && clickedDoor)
         {
+            if (!checkIfPlayed2)
+            {
+            StartCoroutine( OpenDoors());
+            }
+            if (checkIfPlayed)
+            {
+                MainDoor.transform.RotateAround(MainDoorRotator.transform.position, Vector3.up, 30 * Time.deltaTime);
+            }
             //Debug.Log("unlocking main door1");
-            MainDoor.transform.RotateAround(MainDoorRotator.transform.position, Vector3.up, 30 * Time.deltaTime);
+            //MainDoor.transform.RotateAround(MainDoorRotator.transform.position, Vector3.up, 30 * Time.deltaTime);
             //Debug.Log(MainDoor.transform.localRotation.y);
             if (MainDoor.transform.localRotation.eulerAngles.y > 90)
             {
@@ -85,5 +98,18 @@ public class GameManager : MonoBehaviour
         {
             MainDoorNeed.tag = "Clickable";
         }
+    }
+
+    IEnumerator OpenDoors()
+    {
+        
+        if (!checkIfPlayed)
+        {
+            checkIfPlayed2 = true;
+            yield return new WaitForSeconds(13f);
+            checkIfPlayed = true;
+        }
+        
+        yield return null;
     }
 }

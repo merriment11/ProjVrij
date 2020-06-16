@@ -103,7 +103,6 @@ public class Raycast : MonoBehaviour
 							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(2).gameObject);
 						}
 						break;
-
 					case ("MainDoor"):
 						{
 							if (GameManager.instance.clickedMainKey)

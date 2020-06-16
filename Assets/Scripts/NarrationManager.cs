@@ -4,16 +4,20 @@ using UnityEngine;
 public class NarrationManager : MonoBehaviour
 {
 	public AudioSource Narration;
+	public AudioSource NarrationRight;
+	public AudioSource NarrationFrontDoor;
 	public AudioClip NarrationStart;
 	public AudioClip NarrationHuiskamer; //trigger zones need implementation
 	public AudioClip NarrationKussen;
 	public AudioClip NarrationHuistelefoon;
 	public AudioClip NarrationMobieltjeVoorInteractie;
 	public AudioClip NarrationMobieltje;
+	public AudioClip NarrationMobieltjeRight;
 	public AudioClip NarrationStudeerkamer; //trigger zones need implementation
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
+	public AudioClip CorrectKeyPolice;
 	public AudioClip NarrationHuiskamer2; //trigger zones need implementation 
 	public AudioClip NarrationKeuken; //trigger zones need implementation
 
@@ -83,9 +87,16 @@ public class NarrationManager : MonoBehaviour
 				}
 				break;
 			case ("Mobieltje"):
+<<<<<<< HEAD
 				{
 					Narration.clip = NarrationMobieltje;
 					ImportantNarration = 3;
+=======
+				{ 
+					Narration.clip = NarrationMobieltje;
+					NarrationRight.clip = NarrationMobieltjeRight;
+					NarrationRight.Play();
+>>>>>>> 5da8c0bfb38038e8570d2783b8c525fdf57b83a2
 				}
 				break;
 			case ("Boekenkast"):
@@ -103,7 +114,10 @@ public class NarrationManager : MonoBehaviour
 			case ("MainDoor"):
 				if (GameManager.instance.clickedMainKey)
 				{
+					NarrationFrontDoor.clip = CorrectKeyPolice;
 					Narration.clip = CorrectKey;
+					NarrationFrontDoor.Play();
+
 					triggerzone1.SetActive(true);
 					triggerzone2.SetActive(true);
 				}
