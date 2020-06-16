@@ -64,11 +64,11 @@ public class Raycast : MonoBehaviour
 							flash.GetComponent<Image>().color = Color.clear;
 							ed.Blur();
 							GameManager.instance.puzzle = 3;
-							target.SetActive(false);
+
 							StartCoroutine(Activate(boekenkast, 20f));
 
-							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(1).gameObject);
-							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(3).GetChild(2).gameObject);
+							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(2).GetChild(0).gameObject);
+							mm.ChangeMaterialToBlue(mobieltje.transform.GetChild(2).GetChild(1).gameObject);
 
 							if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
 							{
