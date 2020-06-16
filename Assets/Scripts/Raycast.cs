@@ -59,6 +59,7 @@ public class Raycast : MonoBehaviour
 							flash.GetComponent<Image>().color = Color.clear;
 							ed.Blur();
 							GameManager.instance.puzzle = 3;
+							target.SetActive(false);
 							StartCoroutine(Activate(boekenkast, 20f));
 						}
 						break;
