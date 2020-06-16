@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour
 {
     public void StartButton()
     {
-        Debug.LogError("woooow");
+        Debug.Log("woooow");
         UnityEngine.SceneManagement.SceneManager.LoadScene("MichaelTest");
     }
 
