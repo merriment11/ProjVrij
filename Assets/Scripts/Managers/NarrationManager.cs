@@ -35,16 +35,19 @@ public class NarrationManager : MonoBehaviour
 	public PromptManager pm;
 
 	void Start()
-    {
+	{
 		pm = GetComponent<PromptManager>();
 		Narration = GetComponent<AudioSource>();
 		PlayNarration("Start");
 
-		Voicelines[0] = null;
-		Voicelines[1] = NarrationKussen;
-		Voicelines[2] = NarrationMobieltjeVoorInteractie;
-		Voicelines[3] = NarrationMobieltjeEinde;
-		Voicelines[4] = NarrationStudeerkamerEinde;
+		Voicelines = new Dictionary<int, AudioClip>
+		{
+			{0, null},
+			{1, NarrationKussen},
+			{2, NarrationMobieltjeVoorInteractie},
+			{3, NarrationMobieltjeEinde},
+			{4, NarrationStudeerkamerEinde},
+		};
 	}
 
 	private void Update()
@@ -52,7 +55,10 @@ public class NarrationManager : MonoBehaviour
 		if (Input.GetButtonDown("Repeat"))
 		{
 			Narration.Stop();
-			Narration.clip = (Voicelines[ImportantNarration]);
+			if (Voicelines[ImportantNarration] != null)
+			{
+				Narration.clip = (Voicelines[ImportantNarration]);
+			}
 			Narration.Play();
 		}
 	}
@@ -90,6 +96,7 @@ public class NarrationManager : MonoBehaviour
 				break;
 			case ("Mobieltje"):
 				{
+					Narration.clip = NarrationMobieltje;
 					NarrationRight.clip = NarrationMobieltjeRight;
 					NarrationRight.Play();
 					ImportantNarration = 3;
