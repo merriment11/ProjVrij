@@ -77,7 +77,10 @@ public class NarrationManager : MonoBehaviour
 		switch (name)
 		{
 			case ("Start"):
-				{ Narration.clip = NarrationStart; }
+				{
+					Narration.clip = NarrationStart;
+					pm.PlayPrompt("start");
+				}
 				break;
 			case ("Kussen"):
 				{

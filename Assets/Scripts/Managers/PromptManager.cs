@@ -11,17 +11,12 @@ public class PromptManager : MonoBehaviour
 
 	private bool firstTime = true;
 
-	public void Start()
-	{
-		PlayPrompt("start");
-	}
-
 	public void PlayPrompt(string name)
 	{
 		switch (name)
 		{
 			case ("start"):
-				startPrompt.SetActive(true);
+				StartCoroutine(ActivateStart("start", 8f));
 				break;
 			case ("shoot"):
 				interactPrompt.SetActive(true);
@@ -70,7 +65,8 @@ public class PromptManager : MonoBehaviour
 				break;
 		}
 	}
-	IEnumerator Activate(string input, float timer)
+
+	IEnumerator ActivateStart(string input, float timer)
 	{
 		while (timer > 0)
 		{
@@ -80,7 +76,7 @@ public class PromptManager : MonoBehaviour
 
 		if (timer <= 0)
 		{
-			PlayPrompt(input);
+			startPrompt.SetActive(true);
 		}
 
 		yield return null;
