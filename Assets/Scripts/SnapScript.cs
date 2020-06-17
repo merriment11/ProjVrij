@@ -86,7 +86,7 @@ public class SnapScript : MonoBehaviour
 		size = transform.localScale.x; //so the raycast script can access it
 	}
 
-	IEnumerator GrowCircle()
+	/*IEnumerator GrowCircleNew()
 	{
 		float i = 0; //the for loops didn't work well, so we decided to use while loops. The 'I' is kept from this
 		Right.Play();
@@ -108,9 +108,9 @@ public class SnapScript : MonoBehaviour
 		transform.localScale = new Vector3(minSize, minSize, minSize); //reset the sphere
 		fade.color = Color.clear;
 		yield return null;
-	}
+	}*/
 
-	/*IEnumerator GrowCircleOld() 
+	IEnumerator GrowCircle() 
 	{
 		int tempvision = vision;
 		bool broken = false;
@@ -156,5 +156,5 @@ public class SnapScript : MonoBehaviour
 		}
 
 		yield return null;
-	}*/
+	}
 }

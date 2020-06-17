@@ -1826,7 +1826,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
@@ -2021,7 +2021,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
@@ -5120,7 +5120,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
@@ -7560,7 +7560,7 @@ MonoBehaviour:
   DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
   WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}
   CorrectKey: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
-  CorrectKeyPolice: {fileID: 0}
+  CorrectKeyPolice: {fileID: 8300000, guid: 4c67466688a440b4581a8ef23d19ca27, type: 3}
   NarrationHuiskamer2: {fileID: 8300000, guid: e021f6bf97027554abc8546bca1bc864, type: 3}
   NarrationKeuken: {fileID: 8300000, guid: 3c98c6dae7b2d49489850a576fc88edf, type: 3}
   triggerzone1: {fileID: 1704517386}
@@ -7916,7 +7916,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
         type: 3}
