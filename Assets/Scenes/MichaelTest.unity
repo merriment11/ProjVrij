@@ -5714,7 +5714,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0.25
   MinDistance: 1
   MaxDistance: 14
   Pan2D: 0
@@ -6245,7 +6245,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 0
-  DopplerLevel: 1
+  DopplerLevel: 0.25
   MinDistance: 1
   MaxDistance: 14
   Pan2D: 0
@@ -7245,7 +7245,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704517386}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.153575, y: 9.785391, z: 4.9931183}
