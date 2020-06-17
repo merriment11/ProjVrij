@@ -144,6 +144,7 @@ public class Raycast : MonoBehaviour
 							{
 								GameManager.instance.puzzle = 5;
 								GameManager.instance.clickedDoor = true;
+								GameManager.instance.blood.SetActive(true);
 								target.tag = "Untagged";
 								
 								ed.Blur();
