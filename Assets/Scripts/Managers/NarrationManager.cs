@@ -15,9 +15,12 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip NarrationMobieltjeEinde;
 	public AudioClip NarrationStudeerkamer;
 	public AudioClip NarrationStudeerkamerEinde;
+	public AudioClip NarrationKey1;
+	public AudioClip NarrationKey2;
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
-	public AudioClip CorrectKey;
+	public AudioClip CorrectKey1;
+	public AudioClip CorrectKey2;
 	public AudioClip NarrationHuiskamer2;
 	public AudioClip NarrationKeuken;
 
@@ -121,16 +124,26 @@ public class NarrationManager : MonoBehaviour
 					pm.PlayPrompt("repeat");
 				}
 				break;
+			case ("Key1"):
+				{
+					Narration.clip = NarrationKey1;
+				}
+				break;
+			case ("Key2"):
+				{
+					Narration.clip = NarrationKey2;
+				}
+				break;
 			case ("BathroomDoor"):
 				if (GameManager.instance.clickedBathroomKey)
-				{ Narration.clip = null; } //deze hebben we niet
+				{ Narration.clip = CorrectKey1; }
 				else
 				{ Narration.clip = DoorLocked; }
 				break;
 			case ("MainDoor"):
 				if (GameManager.instance.clickedMainKey)
 				{
-					Narration.clip = CorrectKey;
+					Narration.clip = CorrectKey2;
 					NarrationFrontDoor.Play();
 
 					triggerzone1.SetActive(true);

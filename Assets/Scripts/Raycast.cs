@@ -26,6 +26,8 @@ public class Raycast : MonoBehaviour
 	public GameObject Radio;
 	public GameObject TV;
 
+	public GameObject backDoor;
+
 	AudioSource tv;
 	AudioSource radio;
 
@@ -153,6 +155,17 @@ public class Raycast : MonoBehaviour
 								
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
+
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
+
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
+
+								mm.ChangeMaterialToBlue(backDoor.transform.GetChild(1).gameObject);
+								mm.ChangeMaterialToBlue(backDoor.transform.GetChild(2).gameObject);
 							}
 						}
 						break; 
@@ -161,6 +174,8 @@ public class Raycast : MonoBehaviour
 						{
 							if (GameManager.instance.puzzle == 5)
 							{
+								mm.ChangeMaterialToDark(backDoor.transform.GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(backDoor.transform.GetChild(2).gameObject);
 								GameManager.instance.sm.EndGame();
 							}
 						}

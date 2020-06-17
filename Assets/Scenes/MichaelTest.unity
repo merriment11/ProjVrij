@@ -2669,6 +2669,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddcdbc621f29cc42b2875e2a524f7e5, type: 3}
+--- !u!1 &643066609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 37a404ea6bcf6064f8b04b1acf1b7e69,
+    type: 3}
+  m_PrefabInstance: {fileID: 1334111961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &647029149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7182,6 +7188,7 @@ GameObject:
   - component: {fileID: 1704517387}
   - component: {fileID: 1704517389}
   - component: {fileID: 1704517388}
+  - component: {fileID: 1704517390}
   m_Layer: 0
   m_Name: TriggerHuiskamer
   m_TagString: Untagged
@@ -7214,8 +7221,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.2291555, y: 10.670891, z: 4.6979027}
-  m_Center: {x: -4.127498, y: 4.8354454, z: 0.3002491}
+  m_Size: {x: 4.813785, y: 9.9074, z: 1.1714153}
+  m_Center: {x: -3.919813, y: 4.4537, z: -1.4629946}
 --- !u!114 &1704517389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7228,6 +7235,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90482ba698d2b314d8c2799dd38e7817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1704517390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704517386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.153575, y: 9.785391, z: 4.9931183}
+  m_Center: {x: -1.0581231, y: 4.3926954, z: 0.4563408}
 --- !u!1 &1705123095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 263c86c18f7be8a4bb381684bb2ab33f,
@@ -7916,9 +7936,12 @@ MonoBehaviour:
     type: 3}
   NarrationStudeerkamerEinde: {fileID: 8300000, guid: 851968142503bd94298de2aa16f09188,
     type: 3}
+  NarrationKey1: {fileID: 0}
+  NarrationKey2: {fileID: 8300000, guid: dc97992387a051a4298b2af34f693172, type: 3}
   DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
   WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}
-  CorrectKey: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
+  CorrectKey1: {fileID: 8300000, guid: abb2698af6105ba4ba6c9247da2e6899, type: 3}
+  CorrectKey2: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
   NarrationHuiskamer2: {fileID: 8300000, guid: e021f6bf97027554abc8546bca1bc864, type: 3}
   NarrationKeuken: {fileID: 8300000, guid: 3c98c6dae7b2d49489850a576fc88edf, type: 3}
   triggerzone1: {fileID: 1704517386}
@@ -8567,6 +8590,11 @@ PrefabInstance:
       propertyPath: TV
       value: 
       objectReference: {fileID: 1416743363}
+    - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: backDoor
+      value: 
+      objectReference: {fileID: 643066609}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e77435cefbc626448c8f17c0d9ebc20, type: 3}
 --- !u!1001 &1949030285
