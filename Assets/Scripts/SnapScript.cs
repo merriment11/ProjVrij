@@ -65,6 +65,7 @@ public class SnapScript : MonoBehaviour
 		{
 			if (xSpeed <= .25f && -.25f <= xSpeed && zSpeed <= .25f && -.25f <= zSpeed)
 			{
+				GameManager.instance.pm.RemovePrompt("start");
 				if (scene.name == "Menu")
 				{
 					StartCoroutine(GrowCircleMenu()); //start the growth of the sphere so you can see

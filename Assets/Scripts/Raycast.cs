@@ -7,7 +7,6 @@ public class Raycast : MonoBehaviour
 	private float range = 0f;
 
 	public NarrationManager nm;
-	public PromptManager pm;
 	public Eyedrop ed;
 	public MaterialManager mm;
 	private PostProcessVolume PostProcessVolume;
@@ -35,7 +34,6 @@ public class Raycast : MonoBehaviour
 		ss = GetComponentInChildren<SnapScript>();
 		ed = GetComponent<Eyedrop>();
 		mm = GameManager.instance.mm;
-		pm = nm.pm;
 
 		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
 
@@ -52,6 +50,7 @@ public class Raycast : MonoBehaviour
 			GameObject target = ShootRay();
 			if (target != null)
 			{
+				GameManager.instance.pm.RemovePrompt("shoot");
 				Debug.Log(target);
 				switch (target.name)
 				{

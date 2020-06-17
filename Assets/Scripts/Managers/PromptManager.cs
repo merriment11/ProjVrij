@@ -9,6 +9,8 @@ public class PromptManager : MonoBehaviour
 	public GameObject staticPrompt;
 	public GameObject findMobilePrompt;
 
+	private bool firstTime = true;
+
 	public void Start()
 	{
 		PlayPrompt("start");
@@ -20,11 +22,6 @@ public class PromptManager : MonoBehaviour
 		{
 			case ("start"):
 				startPrompt.SetActive(true);
-				StartCoroutine(Activate("repeat", 3f));
-				break;
-			case ("repeat"):
-				repeatPrompt.SetActive(true);
-				StartCoroutine(Activate("shoot", 3f));
 				break;
 			case ("shoot"):
 				interactPrompt.SetActive(true);
@@ -35,11 +32,44 @@ public class PromptManager : MonoBehaviour
 			case ("mobiel"):
 				findMobilePrompt.SetActive(true);
 				break;
+
+			case ("repeat"):
+				repeatPrompt.SetActive(true);
+				break;
 			default:
 				break;
 		}
 	}
 
+	public void RemovePrompt(string name)
+	{
+		switch (name)
+		{
+			case ("start"):
+				startPrompt.SetActive(false);
+				if (firstTime == true)
+				{
+					PlayPrompt("shoot");
+					firstTime = false;
+				}
+				break;
+			case ("shoot"):
+				interactPrompt.SetActive(false);
+				break;
+			case ("static"):
+				staticPrompt.SetActive(false);
+				break;
+			case ("mobiel"):
+				findMobilePrompt.SetActive(false);
+				break;
+
+			case ("repeat"):
+				repeatPrompt.SetActive(false);
+				break;
+			default:
+				break;
+		}
+	}
 	IEnumerator Activate(string input, float timer)
 	{
 		while (timer > 0)

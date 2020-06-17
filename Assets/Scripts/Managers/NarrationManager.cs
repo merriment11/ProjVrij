@@ -55,9 +55,11 @@ public class NarrationManager : MonoBehaviour
 		if (Input.GetButtonDown("Repeat"))
 		{
 			Narration.Stop();
+			NarrationRight.Stop();
 			if (Voicelines[ImportantNarration] != null)
 			{
 				Narration.clip = (Voicelines[ImportantNarration]);
+				pm.RemovePrompt("repeat");
 			}
 			Narration.Play();
 		}
@@ -80,18 +82,26 @@ public class NarrationManager : MonoBehaviour
 			case ("Kussen"):
 				{
 					Narration.clip = NarrationKussen;
-					pm.PlayPrompt("static");
+					
 					ImportantNarration = 1;
+					pm.PlayPrompt("static");
+					pm.PlayPrompt("repeat");
 				}
 				break;
 			case ("Huistelefoon"):
-				{ Narration.clip = NarrationHuistelefoon; }
+				{
+					Narration.clip = NarrationHuistelefoon;
+
+					pm.RemovePrompt("static");
+				}
 				break;
 			case ("MobieltjeVoorInteractie"):
 				{
 					Narration.clip = NarrationMobieltjeVoorInteractie;
-					pm.PlayPrompt("mobiel");
+
 					ImportantNarration = 2;
+					pm.PlayPrompt("mobiel");
+					pm.PlayPrompt("repeat");
 				}
 				break;
 			case ("Mobieltje"):
@@ -99,13 +109,18 @@ public class NarrationManager : MonoBehaviour
 					Narration.clip = NarrationMobieltje;
 					NarrationRight.clip = NarrationMobieltjeRight;
 					NarrationRight.Play();
+
 					ImportantNarration = 3;
+					pm.RemovePrompt("mobiel");
+					pm.PlayPrompt("repeat");
 				}
 				break;
 			case ("Boekenkast"):
 				{
 					Narration.clip = NarrationStudeerkamer;
+
 					ImportantNarration = 4;
+					pm.PlayPrompt("repeat");
 				}
 				break;
 			case ("BathroomDoor"):
