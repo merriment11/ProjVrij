@@ -13,8 +13,8 @@ public class SceneManager : MonoBehaviour
     }
 
 	public void EndGame()
-	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+	{   
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
 		Cursor.lockState = CursorLockMode.None;
 	}
 }

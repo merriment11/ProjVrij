@@ -134,6 +134,7 @@ public class Raycast : MonoBehaviour
 								GameManager.instance.clickedDoor = true;
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
+								target.tag = "Untagged";
 							}
 						}
 						break;
@@ -148,6 +149,7 @@ public class Raycast : MonoBehaviour
 								ed.Blur();
 								tv.Stop();
 								radio.Stop();
+								target.tag = "Untagged";
 							}
 						}
 						break; 
