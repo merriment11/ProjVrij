@@ -17,6 +17,7 @@ public class BlurMechanic : MonoBehaviour
 
 	void Start()
     {
+		Camera = PostProcessVolume.gameObject;
 		ac = GetComponent<AudioSource>();
 		playerTransform = GameManager.instance.playerObject.transform;
 		PostProcessVolume = GameManager.instance.playerObject.GetComponentInChildren<PostProcessVolume>();
@@ -28,7 +29,6 @@ public class BlurMechanic : MonoBehaviour
 		{
 			depthOfField.active = true;
 			depthOfField.focalLength.value = amountOfBlur / Vector3.Distance(playerTransform.position, transform.position);
-
 		}
 	}
 }

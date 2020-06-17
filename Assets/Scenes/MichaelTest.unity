@@ -5693,6 +5693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PostProcessVolume: {fileID: 0}
+  Camera: {fileID: 0}
   amountOfBlur: 400
 --- !u!82 &1346912716
 AudioSource:
@@ -6223,6 +6224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PostProcessVolume: {fileID: 0}
+  Camera: {fileID: 0}
   amountOfBlur: 400
 --- !u!82 &1429137746
 AudioSource:
@@ -7936,12 +7938,13 @@ MonoBehaviour:
     type: 3}
   NarrationStudeerkamerEinde: {fileID: 8300000, guid: 851968142503bd94298de2aa16f09188,
     type: 3}
-  NarrationKey1: {fileID: 0}
+  NarrationKey1: {fileID: 8300000, guid: d4069abb8dd594f448d5dc21700c422b, type: 3}
   NarrationKey2: {fileID: 8300000, guid: dc97992387a051a4298b2af34f693172, type: 3}
   DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
   WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}
   CorrectKey1: {fileID: 8300000, guid: abb2698af6105ba4ba6c9247da2e6899, type: 3}
   CorrectKey2: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
+  CorrectKey2Einde: {fileID: 8300000, guid: eabae6eb8d1818d4a8a85339114be4f1, type: 3}
   NarrationHuiskamer2: {fileID: 8300000, guid: e021f6bf97027554abc8546bca1bc864, type: 3}
   NarrationKeuken: {fileID: 8300000, guid: 3c98c6dae7b2d49489850a576fc88edf, type: 3}
   triggerzone1: {fileID: 1704517386}
