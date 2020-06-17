@@ -155,14 +155,13 @@ public class Raycast : MonoBehaviour
 					
 					case("BackDoor"):
 						{
-							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
+							//if (GameManager.instance.puzzle = 5)
 							GameManager.instance.sm.EndGame();
 						}
 						break;
 					case ("FrontDoor"):
 						{
-							//if (GameManager.instance.clickedBathroomKey) GameManager.instance.clickedDoor = true;
-							//voice line: not the right door
+							//voice line: not the right door, the police is behind here!
 						}
 						break;
 

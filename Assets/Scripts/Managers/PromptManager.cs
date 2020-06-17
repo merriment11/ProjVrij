@@ -42,6 +42,7 @@ public class PromptManager : MonoBehaviour
 		{
 			case ("start"):
 				startPrompt.SetActive(false);
+				StopAllCoroutines();
 				if (firstTime == true)
 				{
 					PlayPrompt("shoot");

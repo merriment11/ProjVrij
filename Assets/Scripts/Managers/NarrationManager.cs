@@ -138,6 +138,7 @@ public class NarrationManager : MonoBehaviour
 					NarrationFrontDoor.clip = CorrectKeyPolice;
 					Narration.clip = CorrectKey;
 					NarrationFrontDoor.Play();
+					Debug.Log(NarrationFrontDoor.time);
 
 					triggerzone1.SetActive(true);
 					triggerzone2.SetActive(true);

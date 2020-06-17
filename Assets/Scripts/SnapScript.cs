@@ -63,17 +63,14 @@ public class SnapScript : MonoBehaviour
 
 		if (Input.GetButtonDown("Snap"))
 		{
-			if (xSpeed <= .25f && -.25f <= xSpeed && zSpeed <= .25f && -.25f <= zSpeed)
+			if (scene.name == "Menu")
 			{
-				if (scene.name == "Menu")
-				{
-					StartCoroutine(GrowCircleMenu()); //start the growth of the sphere so you can see
-				}
-				else
-				{
-					GameManager.instance.pm.RemovePrompt("start");
-					StartCoroutine(GrowCircle());
-				}
+				StartCoroutine(GrowCircleMenu()); //start the growth of the sphere so you can see
+			}
+			else
+			{
+				GameManager.instance.pm.RemovePrompt("start");
+				StartCoroutine(GrowCircle());
 			}
 		}
 
