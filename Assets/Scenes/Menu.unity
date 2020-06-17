@@ -484,7 +484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Right Click to snap your fingers and see
+  m_Text: 'Right Mouse Click to snap your fingers and see
 
 '
 --- !u!23 &1134540952
@@ -1820,7 +1820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nm: {fileID: 0}
-  pm: {fileID: 0}
   ed: {fileID: 1563087625}
   mm: {fileID: 0}
   ss: {fileID: 7661199035295697904}
@@ -1832,6 +1831,7 @@ MonoBehaviour:
   Key3: {fileID: 0}
   Radio: {fileID: 0}
   TV: {fileID: 0}
+  backDoor: {fileID: 0}
 --- !u!114 &7661199036230971905
 MonoBehaviour:
   m_ObjectHideFlags: 0
