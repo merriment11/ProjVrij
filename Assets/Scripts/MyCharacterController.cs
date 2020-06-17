@@ -21,8 +21,9 @@ public class MyCharacterController : MonoBehaviour
 
     public void Start()
     {
-        //hide the mouse
-        Cursor.lockState = CursorLockMode.Locked;
+		//hide the mouse
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
         player = GetComponent<CharacterController>();
         groundCheck = transform.GetChild(1).GetComponent<Transform>();
     }
@@ -53,10 +54,16 @@ public class MyCharacterController : MonoBehaviour
         //toggle the mouse hide with escape
         if (Input.GetKeyDown("escape"))
         {
-            if (Cursor.lockState == CursorLockMode.None)
-                Cursor.lockState = CursorLockMode.Locked;
-            else if (Cursor.lockState == CursorLockMode.Locked)
-                Cursor.lockState = CursorLockMode.None;
+			if (Cursor.lockState == CursorLockMode.None)
+			{
+				Cursor.visible = false;
+				Cursor.lockState = CursorLockMode.Locked;
+			}
+			else if (Cursor.lockState == CursorLockMode.Locked)
+			{
+				Cursor.visible = true;
+				Cursor.lockState = CursorLockMode.None;
+			}
         }
     }
 
