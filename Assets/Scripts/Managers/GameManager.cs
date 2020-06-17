@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public bool checkIfPlayed;
     public bool checkIfPlayed2;
 
+	public GameObject blood;
+
 	//A count for what puzzle the player is at
 	public int puzzle = 1;
 
