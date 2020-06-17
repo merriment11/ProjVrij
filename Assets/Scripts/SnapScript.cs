@@ -7,7 +7,7 @@ public class SnapScript : MonoBehaviour
 	public int vision = 1;
 	private float growSpeed = 0.2f;
 	private float minSize = 3.5f;
-
+	private float fadeOut = 750f;
 	public Image fade;
 
 	public float size; //for the raycast script
@@ -44,14 +44,17 @@ public class SnapScript : MonoBehaviour
 			case (1):
 				growSpeed = 250;
 				minSize = 3.5f;
+				fadeOut = 750f;
 				break;
 			case (2):
 				growSpeed = 250;
 				minSize = 3.5f;
+				fadeOut = 750f;
 				break;
 			case (3):
 				growSpeed = 250;
 				minSize = 3.5f;
+				fadeOut = 750f;
 				break;
 		}
 
@@ -86,7 +89,7 @@ public class SnapScript : MonoBehaviour
 			yield return null;
 			transform.localScale = new Vector3(minSize + i / 25, minSize + i / 25, minSize + i / 25);
 
-			fade.color = Color.Lerp(Color.clear, Color.black, i / 500f);
+			fade.color = Color.Lerp(Color.clear, Color.black, i / fadeOut);
 			if (Input.GetButtonDown("Snap") && transform.localScale.x > minSize + 1)
 			{
 				transform.localScale = new Vector3(minSize, minSize, minSize); //reset the sphere
