@@ -156,13 +156,13 @@ public class Raycast : MonoBehaviour
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
 
-								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
-								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
-								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
+								mm.ChangeMaterialToDark(TV.transform.GetChild(0).GetChild(0).gameObject);
+								mm.ChangeMaterialToDark(TV.transform.GetChild(0).GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(TV.transform.GetChild(0).GetChild(2).gameObject);
 
-								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(0).gameObject);
-								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(1).gameObject);
-								mm.ChangeMaterialToDark(target.transform.GetChild(0).GetChild(2).gameObject);
+								mm.ChangeMaterialToDark(Radio.transform.GetChild(0).GetChild(0).gameObject);
+								mm.ChangeMaterialToDark(Radio.transform.GetChild(0).GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(Radio.transform.GetChild(0).GetChild(2).gameObject);
 
 								mm.ChangeMaterialToBlue(backDoor.transform.GetChild(1).gameObject);
 								mm.ChangeMaterialToBlue(backDoor.transform.GetChild(2).gameObject);

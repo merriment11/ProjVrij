@@ -32,7 +32,6 @@ public class BlurMechanic : MonoBehaviour
 			depthOfField.active = true;
 			depthOfField.focalLength.value = amountOfBlur / Vector3.Distance(playerTransform.position, transform.position);
 
-			Debug.Log(Vector3.Distance(playerTransform.position, transform.position));
 			if (Vector3.Distance(playerTransform.position, transform.position) <= 10f)
 			{
 				Camera.transform.localPosition = initialPosition + Random.insideUnitSphere / (Vector3.Distance(playerTransform.position, transform.position) * 5f);
