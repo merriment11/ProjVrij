@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0250e3ff630dd3e439195491911cb9e4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.8
   m_Pitch: 1
@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0988c2e6108ef4bba417739a1c7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 2
-  smoothing: 5
+  sensitivity: 1.25
+  smoothing: 3.75
 --- !u!114 &7661199036875684130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nm: {fileID: 0}
-  pm: {fileID: 0}
   ed: {fileID: 1941723181}
   mm: {fileID: 0}
   ss: {fileID: 7661199035671970004}

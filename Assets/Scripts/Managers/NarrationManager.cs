@@ -12,14 +12,12 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip NarrationHuistelefoon;
 	public AudioClip NarrationMobieltjeVoorInteractie;
 	public AudioClip NarrationMobieltje;
-	public AudioClip NarrationMobieltjeRight;
 	public AudioClip NarrationMobieltjeEinde;
 	public AudioClip NarrationStudeerkamer;
 	public AudioClip NarrationStudeerkamerEinde;
 	public AudioClip DoorLocked;
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey;
-	public AudioClip CorrectKeyPolice;
 	public AudioClip NarrationHuiskamer2;
 	public AudioClip NarrationKeuken;
 
@@ -72,8 +70,6 @@ public class NarrationManager : MonoBehaviour
 			Narration.Stop();
 		}
 
-		Debug.Log(name);
-
 		switch (name)
 		{
 			case ("Start"):
@@ -110,7 +106,6 @@ public class NarrationManager : MonoBehaviour
 			case ("Mobieltje"):
 				{
 					Narration.clip = NarrationMobieltje;
-					NarrationRight.clip = NarrationMobieltjeRight;
 					NarrationRight.Play();
 
 					ImportantNarration = 3;
@@ -135,10 +130,8 @@ public class NarrationManager : MonoBehaviour
 			case ("MainDoor"):
 				if (GameManager.instance.clickedMainKey)
 				{
-					NarrationFrontDoor.clip = CorrectKeyPolice;
 					Narration.clip = CorrectKey;
 					NarrationFrontDoor.Play();
-					Debug.Log(NarrationFrontDoor.time);
 
 					triggerzone1.SetActive(true);
 					triggerzone2.SetActive(true);

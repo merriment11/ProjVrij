@@ -24,7 +24,7 @@ public class MobileSphere : MonoBehaviour
     {
 		if (mobieltjeAudio != null)
 		{
-			if (playing == false)
+			if (playing == false && mobieltjeAudio.isActiveAndEnabled)
 			{
 				StartCoroutine("PlayAudio");
 				playing = true;
@@ -40,7 +40,6 @@ public class MobileSphere : MonoBehaviour
 			}
 			else if (mobieltjeAudio.isActiveAndEnabled)
 			{
-				Debug.Log("problem?");
 				depthOfField.focalLength.value = 0;
 			}
 		}

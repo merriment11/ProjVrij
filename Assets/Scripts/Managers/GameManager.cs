@@ -92,11 +92,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (!ac.isPlaying && bathroomDoorNeed.tag == "Untagged")
+        if (!ac.isPlaying && bathroomDoorNeed.tag == "Untagged" && clickedBathroomKey)
         {
             bathroomDoorNeed.tag = "Clickable";
         }
-        if (!ac.isPlaying && MainDoorNeed.tag == "Untagged")
+        if (!ac.isPlaying && MainDoorNeed.tag == "Untagged" && clickedMainKey)
         {
             MainDoorNeed.tag = "Clickable";
         }

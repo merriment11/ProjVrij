@@ -114,16 +114,16 @@ public class Raycast : MonoBehaviour
 							GameObject BathroomDoor = GameManager.instance.bathroomDoor;
 							mm.ChangeMaterialToBlue(BathroomDoor.transform.GetChild(1).gameObject);
 							mm.ChangeMaterialToBlue(BathroomDoor.transform.GetChild(2).gameObject);
+
+							GameObject MainDoor = GameManager.instance.MainDoor;
+							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(1).gameObject);
+							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(2).gameObject);
 						}
 						break;
 					case ("Key3"):
 						{
 							GameManager.instance.clickedMainKey = true;
 							target.SetActive(false);
-
-							GameObject MainDoor = GameManager.instance.MainDoor;
-							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(1).gameObject);
-							mm.ChangeMaterialToBlue(MainDoor.transform.GetChild(2).gameObject);
 						}
 						break;
 					case ("BathroomDoor"):
@@ -131,9 +131,10 @@ public class Raycast : MonoBehaviour
 							if (GameManager.instance.clickedBathroomKey)
 							{
 								GameManager.instance.clickedDoor = true;
+								target.tag = "Untagged";
+
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
 								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
-								target.tag = "Untagged";
 							}
 						}
 						break;
@@ -141,22 +142,26 @@ public class Raycast : MonoBehaviour
 						{
 							if (GameManager.instance.clickedMainKey)
 							{
-								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
-								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
-								GameManager.instance.clickedDoor = true;
 								GameManager.instance.puzzle = 5;
+								GameManager.instance.clickedDoor = true;
+								target.tag = "Untagged";
+								
 								ed.Blur();
 								tv.Stop();
 								radio.Stop();
-								target.tag = "Untagged";
+								
+								mm.ChangeMaterialToDark(target.transform.parent.GetChild(1).gameObject);
+								mm.ChangeMaterialToDark(target.transform.parent.GetChild(2).gameObject);
 							}
 						}
 						break; 
 					
 					case("BackDoor"):
 						{
-							//if (GameManager.instance.puzzle = 5)
-							GameManager.instance.sm.EndGame();
+							if (GameManager.instance.puzzle == 5)
+							{
+								GameManager.instance.sm.EndGame();
+							}
 						}
 						break;
 					case ("FrontDoor"):

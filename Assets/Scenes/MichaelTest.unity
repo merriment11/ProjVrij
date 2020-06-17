@@ -581,8 +581,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: ec243d4c61008954ab46c988c41f8fb4, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -591,8 +591,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 13.3
-  MaxDistance: 155
+  MinDistance: 2
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -7582,7 +7582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861531640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.14, y: 1.5, z: -29.16}
+  m_LocalPosition: {x: -4.31, y: 1.5, z: -15.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7611,8 +7611,6 @@ MonoBehaviour:
   NarrationMobieltjeVoorInteractie: {fileID: 8300000, guid: 69e69359893a404499ab5568bca2b329,
     type: 3}
   NarrationMobieltje: {fileID: 8300000, guid: 93e4ecae44a1f04448718d4e6c71f2e8, type: 3}
-  NarrationMobieltjeRight: {fileID: 8300000, guid: 0250e3ff630dd3e439195491911cb9e4,
-    type: 3}
   NarrationMobieltjeEinde: {fileID: 8300000, guid: 4872f930c5793c745b7da6393a6f6d03,
     type: 3}
   NarrationStudeerkamer: {fileID: 8300000, guid: bd7670c6dc94b7e419aafc57d942811d,
@@ -7622,7 +7620,6 @@ MonoBehaviour:
   DoorLocked: {fileID: 8300000, guid: 67d709d94f63ac041ae7a7dacf154bfe, type: 3}
   WrongKey: {fileID: 8300000, guid: a64f1a7e7c140f947b5b6871e6d5f3aa, type: 3}
   CorrectKey: {fileID: 8300000, guid: 8c1d5df2f91ae104d894340a17d41e25, type: 3}
-  CorrectKeyPolice: {fileID: 8300000, guid: 4c67466688a440b4581a8ef23d19ca27, type: 3}
   NarrationHuiskamer2: {fileID: 8300000, guid: e021f6bf97027554abc8546bca1bc864, type: 3}
   NarrationKeuken: {fileID: 8300000, guid: 3c98c6dae7b2d49489850a576fc88edf, type: 3}
   triggerzone1: {fileID: 1704517386}
@@ -8156,6 +8153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1447148317, guid: 5e77435cefbc626448c8f17c0d9ebc20, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7661199035671970004, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: fade
@@ -8169,7 +8170,7 @@ PrefabInstance:
     - target: {fileID: 7661199036600438790, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.8
+      value: -10.54
       objectReference: {fileID: 0}
     - target: {fileID: 7661199036600438790, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
@@ -8179,7 +8180,7 @@ PrefabInstance:
     - target: {fileID: 7661199036600438790, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.567
+      value: -28.09
       objectReference: {fileID: 0}
     - target: {fileID: 7661199036600438790, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
@@ -8221,26 +8222,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7661199036875684128, guid: 5e77435cefbc626448c8f17c0d9ebc20,
-        type: 3}
-      propertyPath: sensitivity
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661199036875684128, guid: 5e77435cefbc626448c8f17c0d9ebc20,
-        type: 3}
-      propertyPath: smoothing
-      value: 3.75
-      objectReference: {fileID: 0}
     - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: nm
       value: 
       objectReference: {fileID: 1861531642}
-    - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
-        type: 3}
-      propertyPath: pm
-      value: 
-      objectReference: {fileID: 1861531644}
     - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: mm
@@ -8256,6 +8242,11 @@ PrefabInstance:
       propertyPath: mobieltje
       value: 
       objectReference: {fileID: 1365921988}
+    - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
+        type: 3}
+      propertyPath: boekenkast
+      value: 
+      objectReference: {fileID: 185192886}
     - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
         type: 3}
       propertyPath: Key2
@@ -8276,11 +8267,6 @@ PrefabInstance:
       propertyPath: TV
       value: 
       objectReference: {fileID: 1416743363}
-    - target: {fileID: 7661199036875684132, guid: 5e77435cefbc626448c8f17c0d9ebc20,
-        type: 3}
-      propertyPath: boekenkast
-      value: 
-      objectReference: {fileID: 185192886}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e77435cefbc626448c8f17c0d9ebc20, type: 3}
 --- !u!1001 &1949030285
