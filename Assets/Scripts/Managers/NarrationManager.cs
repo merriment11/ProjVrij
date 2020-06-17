@@ -21,6 +21,7 @@ public class NarrationManager : MonoBehaviour
 	public AudioClip WrongKey;
 	public AudioClip CorrectKey1;
 	public AudioClip CorrectKey2;
+	public AudioClip CorrectKey2Einde;
 	public AudioClip NarrationHuiskamer2;
 	public AudioClip NarrationKeuken;
 
@@ -48,6 +49,7 @@ public class NarrationManager : MonoBehaviour
 			{2, NarrationMobieltjeVoorInteractie},
 			{3, NarrationMobieltjeEinde},
 			{4, NarrationStudeerkamerEinde},
+			{5, CorrectKey2Einde},
 		};
 	}
 
@@ -148,6 +150,7 @@ public class NarrationManager : MonoBehaviour
 
 					triggerzone1.SetActive(true);
 					triggerzone2.SetActive(true);
+					ImportantNarration = 5;
 				}
 				else if (GameManager.instance.clickedBathroomKey)
 				{ Narration.clip = WrongKey; }

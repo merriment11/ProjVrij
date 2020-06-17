@@ -10,6 +10,8 @@ public class BlurMechanic : MonoBehaviour
 	private PostProcessVolume PostProcessVolume;
 	DepthOfField depthOfField;
 
+	public GameObject Camera;
+
 	[Tooltip ("400 works okay as a baseline for the tv and radio")]
 	public float amountOfBlur = 400f;
 
@@ -26,10 +28,7 @@ public class BlurMechanic : MonoBehaviour
 		{
 			depthOfField.active = true;
 			depthOfField.focalLength.value = amountOfBlur / Vector3.Distance(playerTransform.position, transform.position);
-		}
-		else if (PostProcessVolume.profile.TryGetSettings(out depthOfField))
-		{
-			
+
 		}
 	}
 }
