@@ -20,9 +20,10 @@ public class GameManager : MonoBehaviour
     public bool clickedBathroomKey;
     public bool clickedDoor;
     public bool checkIfPlayed;
-    public bool checkIfPlayed2;
+    public bool checkIfPlayed2; 
+    public bool checkIfPlayed3;
 
-	public GameObject blood;
+    public GameObject blood;
 
 	//A count for what puzzle the player is at
 	public int puzzle = 1;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         clickedMainKey = false;
         checkIfPlayed = false;
         checkIfPlayed2 = false;
+        checkIfPlayed3 = false;
     }
 
     void Update()
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             if (!checkIfPlayed2)
             {
-            StartCoroutine( OpenDoors());
+                StartCoroutine( OpenDoors());
             }
             if (checkIfPlayed)
             {
@@ -86,6 +88,7 @@ public class GameManager : MonoBehaviour
         {
             //Debug.Log("unlocking main door1");
             bathroomDoor.transform.RotateAround(bathroomDoorRotator.transform.position, Vector3.up, 30 * Time.deltaTime);
+            checkIfPlayed3 = true;
             //Debug.Log(MainDoor.transform.localRotation.y);
             if (bathroomDoor.transform.localRotation.eulerAngles.y > 179)
             {
@@ -94,7 +97,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (!ac.isPlaying && bathroomDoorNeed.tag == "Untagged" && clickedBathroomKey)
+        if (!ac.isPlaying && bathroomDoorNeed.tag == "Untagged" && clickedBathroomKey && !checkIfPlayed3)
         {
             bathroomDoorNeed.tag = "Clickable";
         }

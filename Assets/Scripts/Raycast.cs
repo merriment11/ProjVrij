@@ -53,7 +53,6 @@ public class Raycast : MonoBehaviour
 			if (target != null)
 			{
 				GameManager.instance.pm.RemovePrompt("shoot");
-				Debug.Log(target);
 				switch (target.name)
 				{
 					case ("Kussen"):
@@ -146,7 +145,7 @@ public class Raycast : MonoBehaviour
 							{
 								GameManager.instance.puzzle = 5;
 								GameManager.instance.clickedDoor = true;
-								GameManager.instance.blood.SetActive(true);
+								StartCoroutine(ShowBlood());
 								target.tag = "Untagged";
 								
 								ed.Blur();
@@ -180,12 +179,6 @@ public class Raycast : MonoBehaviour
 							}
 						}
 						break;
-					case ("FrontDoor"):
-						{
-							//voice line: not the right door, the police is behind here!
-						}
-						break;
-
 					case ("TV"):
 						{	
 							if (GameManager.instance.puzzle == 4)
@@ -223,10 +216,12 @@ public class Raycast : MonoBehaviour
 				{
 					target.GetComponentInChildren<AudioSource>().enabled = false;
 				}
+				if (target.name != "BackDoor" || target.name != "achterdeur")
+				{
+					nm.PlayNarration(target.name);
+				}
 
-				nm.PlayNarration(target.name);
-
-				if (target.name != "TV" && target.name != "Radio")
+				if (target.name != "TV" && target.name != "Radio" && target.name != "BackDoor")
 				{
 					target.tag = "Untagged";
 				}
@@ -265,6 +260,13 @@ public class Raycast : MonoBehaviour
 			}
 		}
 
+		yield return null;
+	}
+
+	IEnumerator ShowBlood()
+    {
+		yield return new WaitForSeconds(15);
+		GameManager.instance.blood.SetActive(true);
 		yield return null;
 	}
 }
