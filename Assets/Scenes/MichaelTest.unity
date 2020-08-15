@@ -1318,7 +1318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967294
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &249367222
 Transform:
   m_ObjectHideFlags: 0
@@ -4050,7 +4050,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0.44
   MinDistance: 1
-  MaxDistance: 23.273851
+  MaxDistance: 19.990505
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -5721,7 +5721,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0.25
   MinDistance: 1.8262749
-  MaxDistance: 20.62652
+  MaxDistance: 17.040243
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -6210,7 +6210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429137743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5109, y: 0.01775, z: 0.07817}
+  m_LocalPosition: {x: -0.5139, y: 0.01775, z: 0.0782}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1416743364}
@@ -6252,7 +6252,7 @@ AudioSource:
   Priority: 0
   DopplerLevel: 0.25
   MinDistance: 1.8244171
-  MaxDistance: 19.817425
+  MaxDistance: 11.7244835
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
